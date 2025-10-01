@@ -1,7 +1,7 @@
 site_name: doc-redaction
 repo_url: https://github.com/deadhand777/doc-redaction
 site_url: https://deadhand777.github.io/doc-redaction
-site_description: This is a template repository for Python projects that use uv for their dependency management.
+site_description: This is a Document Redaction Automation project.
 site_author: Chris Schulz
 edit_uri: edit/main/docs/
 repo_name: deadhand777/doc-redaction
@@ -9,6 +9,7 @@ copyright: Maintained by <a href="https://deadhand777.com">deadhand777</a>.
 
 nav:
   - Home: index.md
+  - Getting Stated: geeting_started.md
   - Architecture: architecture.md
   - Modules: modules.md
 plugins:
@@ -43,8 +44,6 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/deadhand777/doc-redaction
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/doc-redaction
 
 markdown_extensions:
   - toc:
