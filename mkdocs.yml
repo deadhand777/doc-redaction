@@ -9,6 +9,7 @@ copyright: Maintained by <a href="https://deadhand777.com">deadhand777</a>.
 
 nav:
   - Home: index.md
+  - Architecture: architecture.md
   - Modules: modules.md
 plugins:
   - search

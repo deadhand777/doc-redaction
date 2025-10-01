@@ -1,21 +1,30 @@
 [project]
 name = "doc-redaction"
 version = "0.0.1"
-description = "This is a template repository for Python projects that use uv for their dependency management."
+description = "Document Blackening Automation"
 authors = [{ name = "Chris Schulz", email = "chris.schulz13@yahoo.de" }]
 readme = "README.md"
 keywords = ['python']
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.11,<4.0"
 classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "bedrock-agentcore>=0.1.5",
+    "bedrock-agentcore-starter-toolkit>=0.1.14",
+    "boto3>=1.40.41",
+    "loguru>=0.7.3",
+    "mlx-vlm>=0.3.3",
+    "strands-agents-builder>=0.1.10",
+    "strands-agents-tools>=0.2.9",
+    "strands-agents[ollama]>=1.10.0",
+    "uv>=0.8.22",
 ]
 
 [project.urls]
@@ -23,14 +32,15 @@ Homepage = "https://deadhand777.github.io/doc-redaction/"
 Repository = "https://github.com/deadhand777/doc-redaction"
 Documentation = "https://deadhand777.github.io/doc-redaction/"
 
+
 [dependency-groups]
 dev = [
     "pytest>=7.2.0",
     "pre-commit>=2.20.0",
     "tox-uv>=1.11.3",
-    
+
     "ty>=0.0.1a16",
-    
+
     "ruff>=0.11.5",
     "mkdocs>=1.4.2",
     "mkdocs-material>=8.5.10",
@@ -42,18 +52,18 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/doc_redaction"]
+packages = ["src/document_blackening"]
 
 [tool.ty.environment]
 python = "./.venv"
-python-version = "3.9"
+python-version = "3.11"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.ruff]
-target-version = "py39"
-line-length = 120
+target-version = "py311"
+line-length = 180
 fix = true
 
 [tool.ruff.lint]
@@ -96,10 +106,11 @@ ignore = [
     "E731",
 ]
 
+[tool.ruff.lint.mccabe]
+max-complexity = 15
+
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"]
 
 [tool.ruff.format]
 preview = true
-
-
