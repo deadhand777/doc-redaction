@@ -481,6 +481,15 @@ wheels = [
 ]
 
 [[package]]
+name = "directory-tree"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ba/48/7dbb436a54e0b727ba81ccb1bcf7875e875f826dcf43e01b9ad52726b179/directory_tree-1.0.0.tar.gz", hash = "sha256:d65b404d7e561db62e6321f36c612cd12da2e9fbe5cbae98da73ce14c0ec910d", size = 28347, upload-time = "2024-08-18T17:36:59.19Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4e/fb/047673ca107e735c0dd9e03811a6f0c8c22ed72d6db596134399580c80c5/directory_tree-1.0.0-py3-none-any.whl", hash = "sha256:2484ba5e9d35e087703913cc85e920f08b9b942859b9f5a0eae24699d3364734", size = 23001, upload-time = "2024-08-18T17:36:57.261Z" },
+]
+
+[[package]]
 name = "distlib"
 version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -507,6 +516,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "directory-tree" },
     { name = "mkdocs" },
     { name = "mkdocs-material" },
     { name = "mkdocstrings", extra = ["python"] },
@@ -532,14 +542,15 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "mkdocs", specifier = ">=1.4.2" },
-    { name = "mkdocs-material", specifier = ">=8.5.10" },
-    { name = "mkdocstrings", extras = ["python"], specifier = ">=0.26.1" },
-    { name = "pre-commit", specifier = ">=2.20.0" },
+    { name = "directory-tree", specifier = ">=1.0.0" },
+    { name = "mkdocs", specifier = ">=1.6.1" },
+    { name = "mkdocs-material", specifier = ">=9.6.20" },
+    { name = "mkdocstrings", extras = ["python"], specifier = ">=0.30.1" },
+    { name = "pre-commit", specifier = ">=4.3.0" },
     { name = "pytest", specifier = ">=7.2.0" },
     { name = "ruff", specifier = ">=0.11.5" },
-    { name = "tox-uv", specifier = ">=1.11.3" },
-    { name = "ty", specifier = ">=0.0.1a16" },
+    { name = "tox-uv", specifier = ">=1.28.0" },
+    { name = "ty", specifier = ">=0.0.1a21" },
 ]
 
 [[package]]
