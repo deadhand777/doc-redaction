@@ -57,7 +57,7 @@ This service addresses these challenges by:
 
 ## Getting started
 
-Please visit the [Getting Started Section](https://deadhand777.github.io/doc-redaction/getting-started/) within the project documentation. Step-by-step guidance is provided there.
+Please visit the [Getting Started Section](https://deadhand777.github.io/doc-redaction/geeting_started/) within the project documentation. Step-by-step guidance is provided there.
 
 ## How does it work
 
