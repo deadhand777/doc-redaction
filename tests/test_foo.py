@@ -1,4 +1,4 @@
-from doc_redaction.foo import foo
+from src.doc_redaction.foo import foo
 
 
 def test_foo():
