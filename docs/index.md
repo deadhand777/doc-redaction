@@ -22,7 +22,7 @@ The templete utilizes the following tools for development, testing, and deployme
 
 ## Getting Started
 
-See TBD documentation.
+See [Getting Started](https://deadhand777.github.io/doc-redaction/getting-started/)
 
 ## Architecture
 
