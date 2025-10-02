@@ -9,7 +9,8 @@ copyright: Maintained by <a href="https://deadhand777.com">deadhand777</a>.
 
 nav:
   - Home: index.md
-  - Getting Stated: geeting_started.md
+  - Getting Started: getting_started.md
+  - Agent Workflow: agentic_workflow.md
   - Architecture: architecture.md
   - Modules: modules.md
 plugins:
