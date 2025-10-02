@@ -19,6 +19,7 @@ dependencies = [
     "bedrock-agentcore>=0.1.5",
     "bedrock-agentcore-starter-toolkit>=0.1.14",
     "boto3>=1.40.41",
+    "diagrams>=0.24.4",
     "loguru>=0.7.3",
     "mlx-vlm>=0.3.3",
     "strands-agents-builder>=0.1.10",

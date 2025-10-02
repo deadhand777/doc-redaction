@@ -1,0 +1,65 @@
+{
+  "document_analysis": {
+    "document_name": "Technology Services Agreement",
+    "document_type": "Contract",
+    "analysis_date": "2024-12-19",
+    "sensitive_data_detected": true
+  },
+  "parties": [
+    {
+      "company_name": "Rocketbase GmbH",
+      "address": "Schulterblatt 23, 20357 Hamburg, Germany",
+      "company_registration_numbers": [
+        "HRB 654321"
+      ]
+    },
+    {
+      "company_name": "Amazon Web Services, Inc.",
+      "address": "410 Terry Avenue North, Seattle, WA 98109, United States of America",
+      "company_registration_numbers": []
+    }
+  ],
+  "representative": [
+    {
+      "people_names": "Lisa Schneider",
+      "email_addresses": "",
+      "phone_numbers": "",
+      "job_title": "Managing Director"
+    },
+    {
+      "people_names": "John Smith",
+      "email_addresses": "",
+      "phone_numbers": "",
+      "job_title": "Vice President"
+    }
+  ],
+  "contract_terms": {
+    "initial_term": "24 months",
+    "renewal_period": "one-year periods",
+    "auto_renewal": true,
+    "notice_period": "three (3) months",
+    "termination_notice": "three (3) months' prior written notice",
+    "payment_terms": "Invoices are payable within thirty (30) days of receipt",
+    "payments": "fees specified in the applicable service orders or as otherwise published in AWS's standard price lists",
+    "iban_numbers": [],
+    "credit_card_numbers": [],
+    "account_numbers": [],
+    "currency_amounts": [],
+    "number_words": [
+      "thirty",
+      "three",
+      "one-year",
+      "24"
+    ],
+    "percentages": []
+  },
+  "risk_assessment": {
+    "contains_personal_data": true,
+    "contains_business_sensitive_info": true,
+    "contains_financial_terms": true,
+    "contains_legal_obligations": true
+  },
+  "data_protection_compliance": {
+    "mentioned": true
+  }
+}

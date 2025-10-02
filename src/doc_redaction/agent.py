@@ -1,6 +1,5 @@
 from typing import Any
 
-# import boto3
 from loguru import logger
 from strands import Agent
 from strands.models import BedrockModel

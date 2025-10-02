@@ -29,7 +29,7 @@ uv run pre-commit install
 
 Congratulations, now your setup is completed!
 
-4. Run the workflow with on a sample PDF document:
+4. Run the workflow on a sample PDF document:
 
 ```bash
 uv run src/doc_redaction/workflow.py --key spielbank_rocketbase_vertrag

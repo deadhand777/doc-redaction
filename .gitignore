@@ -211,6 +211,6 @@ marimo/_lsp/
 __marimo__/
 
 ## Local
-data
+# data
 local
 .DS_Store

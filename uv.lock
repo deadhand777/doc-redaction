@@ -472,6 +472,20 @@ wheels = [
 ]
 
 [[package]]
+name = "diagrams"
+version = "0.24.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "graphviz" },
+    { name = "jinja2" },
+    { name = "pre-commit" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0c/50/abb3442117b933ae08c948b4c08672eba5f78a35ef820c03f5979affbe3b/diagrams-0.24.4.tar.gz", hash = "sha256:367b3056bc8875b5a32dcf66c7aad961cb83527b8f345dced82f17ee82781f72", size = 26913707, upload-time = "2025-03-10T07:11:56.402Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/59/f1/f83298463453662f27bd93a21a9cacc157b62f665db795f26e1a25143b7b/diagrams-0.24.4-py3-none-any.whl", hash = "sha256:41c5c03e1317ada0a64287f704e5e9d9c8794addce96b66dd831a536aa7e6507", size = 27830571, upload-time = "2025-03-10T07:11:49.623Z" },
+]
+
+[[package]]
 name = "dill"
 version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -506,6 +520,7 @@ dependencies = [
     { name = "bedrock-agentcore" },
     { name = "bedrock-agentcore-starter-toolkit" },
     { name = "boto3" },
+    { name = "diagrams" },
     { name = "loguru" },
     { name = "mlx-vlm" },
     { name = "strands-agents", extra = ["ollama"] },
@@ -532,6 +547,7 @@ requires-dist = [
     { name = "bedrock-agentcore", specifier = ">=0.1.5" },
     { name = "bedrock-agentcore-starter-toolkit", specifier = ">=0.1.14" },
     { name = "boto3", specifier = ">=1.40.41" },
+    { name = "diagrams", specifier = ">=0.24.4" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "mlx-vlm", specifier = ">=0.3.3" },
     { name = "strands-agents", extras = ["ollama"], specifier = ">=1.10.0" },
@@ -686,6 +702,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/d9/29/d40217cbe2f6b1359e00c6c307bb3fc876ba74068cbab3dde77f03ca0dc4/ghp-import-2.1.0.tar.gz", hash = "sha256:9c535c4c61193c2df8871222567d7fd7e5014d835f97dc7b7439069e2413d343", size = 10943, upload-time = "2022-05-02T15:47:16.11Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f7/ec/67fbef5d497f86283db54c22eec6f6140243aae73265799baaaa19cd17fb/ghp_import-2.1.0-py3-none-any.whl", hash = "sha256:8337dd7b50877f163d4c0289bc1f1c7f127550241988d568c1db512c4324a619", size = 11034, upload-time = "2022-05-02T15:47:14.552Z" },
+]
+
+[[package]]
+name = "graphviz"
+version = "0.20.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/fa/83/5a40d19b8347f017e417710907f824915fba411a9befd092e52746b63e9f/graphviz-0.20.3.zip", hash = "sha256:09d6bc81e6a9fa392e7ba52135a9d49f1ed62526f96499325930e87ca1b5925d", size = 256455, upload-time = "2024-03-21T07:50:45.772Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/00/be/d59db2d1d52697c6adc9eacaf50e8965b6345cc143f671e1ed068818d5cf/graphviz-0.20.3-py3-none-any.whl", hash = "sha256:81f848f2904515d8cd359cc611faba817598d2feaac4027b266aa3eda7b3dde5", size = 47126, upload-time = "2024-03-21T07:50:43.091Z" },
 ]
 
 [[package]]
