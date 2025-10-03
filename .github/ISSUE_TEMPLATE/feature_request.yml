@@ -30,9 +30,9 @@ body:
     validations:
       required: true
   - type: textarea
-    id: alternatives-solutions
+    id: alternative-solutions
     attributes:
-      label: Alternatives Solutions
+      label: Alternative Solutions
       description: Optional - Have you considered alternative approaches? What are their pros and cons?
   - type: textarea
     id: additional-context
