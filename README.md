@@ -82,6 +82,7 @@ Sample input and output artifacts can be found in the [data directory](https://g
 
 Raw Contract | Converted Document | Sensitive Data Catalog | Redacted Document
 ------------ | ------------------ | ---------------------- | -----------------
+[Raw spielbank_rocketbase_dienstleistungsvertrag](data/contract/spielbank_rocketbase_dienstleistungsvertrag.pdf) | [Converted spielbank_rocketbase_dienstleistungsvertrag](data/markdown/spielbank_rocketbase_dienstleistungsvertrag.md) | [Extracted spielbank_rocketbase_dienstleistungsvertrag](data/confidential/spielbank_rocketbase_dienstleistungsvertrag.json) | [Redacted spielbank_rocketbase_dienstleistungsvertrag](data/redact/spielbank_rocketbase_dienstleistungsvertrag_redacted.md)
 [Raw rocketbase_aws_agreement](data/contract/rocketbase_aws_agreement.pdf) | [Converted rocketbase_aws_agreement](data/markdown/rocketbase_aws_agreement.md) | [Extracted rocketbase_aws_agreement](data/confidential/rocketbase_aws_agreement.json) | [Redacted rocketbase_aws_agreement](data/redact/rocketbase_aws_agreement_redacted.md)
 [Raw spielbank_rocketbase_vertrag](data/contract/spielbank_rocketbase_vertrag.pdf) | [Converted spielbank_rocketbase_vertrag](data/markdown/spielbank_rocketbase_vertrag.md) | [Extracted spielbank_rocketbase_vertrag](data/confidential/spielbank_rocketbase_vertrag.json) | [Redacted spielbank_rocketbase_vertrag](data/redact/spielbank_rocketbase_vertrag_redacted.md)
 
