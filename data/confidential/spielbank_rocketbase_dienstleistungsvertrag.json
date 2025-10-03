@@ -1,0 +1,90 @@
+{
+  "document_analysis": {
+    "document_name": "spielbank_rocketbase_dienstleistungsvertrag.json",
+    "document_type": "Dienstleistungsvertrag",
+    "analysis_date": "2024-12-19",
+    "sensitive_data_detected": true
+  },
+  "parties": [
+    {
+      "company_name": "Spielbank AG",
+      "address": "Musterstra\u00dfe 1, 60329 Frankfurt am Main",
+      "company_registration_numbers": [
+        "HRB: 123456"
+      ]
+    },
+    {
+      "company_name": "Rocketbase GmbH",
+      "address": "Innovationsweg 7, 20457 Hamburg",
+      "company_registration_numbers": [
+        "HRB: 654321"
+      ]
+    }
+  ],
+  "representative": [
+    {
+      "people_names": "Dr. Hans Meier",
+      "email_addresses": "hans.meier@spielbank-ag.de",
+      "phone_numbers": "+49 69 0000 0000",
+      "job_title": "Vorstandsvorsitzender"
+    },
+    {
+      "people_names": "Lisa Schneider",
+      "email_addresses": "lisa.schneider@rocketbase.com",
+      "phone_numbers": "+49 40 0000 0000",
+      "job_title": "Gesch\u00e4ftsf\u00fchrerin"
+    },
+    {
+      "people_names": "Franz Fischer",
+      "email_addresses": "",
+      "phone_numbers": "",
+      "job_title": "Datenschutz-Kontaktstelle Bank"
+    },
+    {
+      "people_names": "Sandra K\u00f6nig",
+      "email_addresses": "",
+      "phone_numbers": "",
+      "job_title": "Datenschutz-Kontaktstelle Dienstleister"
+    }
+  ],
+  "contract_terms": {
+    "initial_term": "24 Monate",
+    "renewal_period": "12 Monate",
+    "auto_renewal": true,
+    "notice_period": "3 Monate vor Ablauf",
+    "termination_notice": "3 Monate vor Ablauf",
+    "payment_terms": "Rechnungsstellung monatlich; Zahlungsziel: 30 Tage netto",
+    "payments": "monatliche Pauschale",
+    "iban_numbers": [
+      "DE00TEST00000000000000",
+      "DE00TEST11111111111111"
+    ],
+    "credit_card_numbers": [
+      "3400 0000 0000 0091"
+    ],
+    "account_numbers": [
+      "15674994"
+    ],
+    "currency_amounts": [
+      "10.000,00 \u20ac",
+      "120.000,00 \u20ac",
+      "1.000.000,00 \u20ac"
+    ],
+    "number_words": [
+      "zehntausend"
+    ],
+    "percentages": [
+      "99,9 %",
+      "5 %"
+    ]
+  },
+  "risk_assessment": {
+    "contains_personal_data": true,
+    "contains_business_sensitive_info": true,
+    "contains_financial_terms": true,
+    "contains_legal_obligations": true
+  },
+  "data_protection_compliance": {
+    "mentioned": true
+  }
+}
