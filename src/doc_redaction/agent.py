@@ -6,13 +6,18 @@ from strands.models import BedrockModel
 
 from doc_redaction.utils import MissingArgumentError
 
-DEFAULT_MODEL_ID: str = "eu.anthropic.claude-sonnet-4-20250514-v1:0"
+MODEL_IDS: dict[str, str] = {
+    "default": "eu.anthropic.claude-sonnet-4-20250514-v1:0",
+    "experimental": "eu.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "processing": "eu.amazon.nova-lite-v1:0",
+}
 REGION: str = "eu-central-1"
 
 bedrock_model = BedrockModel(
-    model_id=DEFAULT_MODEL_ID,
+    model_id=MODEL_IDS["default"],
     region_name=REGION,
     streaming=False,
+    temperature=0,
 )
 
 
