@@ -3,7 +3,7 @@ description: Suggest a new feature or enhancement for Document Redaction
 title: "[FEATURE] "
 labels: ["enhancement", "triage"]
 projects:
-  - "doc-redaction"
+  - "deadhand777/doc-redaction"
 assignees: []
 body:
   - type: markdown

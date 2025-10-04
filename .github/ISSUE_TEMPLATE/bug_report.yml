@@ -3,7 +3,7 @@ description: Report a bug in the Document Redaction project
 title: "[BUG] "
 labels: ["bug", "triage"]
 projects:
-  - "doc-redaction"
+  - "deadhand777/doc-redaction#Backlog"
 assignees: []
 body:
   - type: markdown
