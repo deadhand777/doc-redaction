@@ -2,10 +2,9 @@ name: Bug Report
 description: Report a bug in the Document Redaction project
 title: "[BUG] "
 labels: ["bug", "triage"]
-assignees: []
 projects:
   - "doc-redaction"
-project_status: "backlog"
+assignees: []
 body:
   - type: markdown
     attributes:
