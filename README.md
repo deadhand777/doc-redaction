@@ -1,8 +1,8 @@
 # Document Redaction Automation Service
 
-[![Release](https://img.shields.io/github/v/release/deadhand777/document-redaction)](https://img.shields.io/github/v/release/deadhand777/document-redaction)
-[![Build status](https://img.shields.io/github/actions/workflow/status/deadhand777/document-redaction/main.yml?branch=main)](https://github.com/deadhand777/document-redaction/actions/workflows/main.yml?query=branch%3Amain)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/deadhand777/document-redaction)](https://img.shields.io/github/commit-activity/m/deadhand777/document-redaction)
+[![Build status](https://github.com/deadhand777/doc-redaction/actions/workflows/main.yml/badge.svg)](https://github.com/deadhand777/doc-redaction/actions/workflows/main.yml)
+[![Release](https://github.com/deadhand777/doc-redaction/actions/workflows/on-release-main.yml/badge.svg)](https://github.com/deadhand777/doc-redaction/actions/workflows/on-release-main.yml)
+[![Docs status](https://github.com/deadhand777/doc-redaction/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/deadhand777/doc-redaction/actions/workflows/pages/pages-build-deployment)
 [![License](https://img.shields.io/github/license/deadhand777/doc-redaction)](https://img.shields.io/github/license/deadhand777/document-redaction)
 
 ![!AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
