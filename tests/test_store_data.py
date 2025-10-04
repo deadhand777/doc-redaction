@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from src.doc_redaction.tool.store_data import save_as_json
+from doc_redaction.tool.store_data import save_as_json
 
 
 class TestSaveAsJson:
