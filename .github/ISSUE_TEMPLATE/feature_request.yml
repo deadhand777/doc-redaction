@@ -2,8 +2,10 @@ name: Feature Request
 description: Suggest a new feature or enhancement for Document Redaction
 title: "[FEATURE] "
 labels: ["enhancement", "triage"]
-projects: ["doc-redaction"]
 assignees: []
+projects:
+  - "doc-redaction"
+project_status: "backlog"
 body:
   - type: markdown
     attributes:
