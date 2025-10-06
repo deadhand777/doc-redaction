@@ -2,6 +2,7 @@ name: Bug Report
 description: Report a bug in the Document Redaction project
 title: "[BUG] "
 labels: ["bug", "triage"]
+projects: ["deadhand777/4"]
 assignees: []
 body:
   - type: markdown
