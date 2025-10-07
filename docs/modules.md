@@ -43,6 +43,14 @@
 
 ::: utils.save_as_json
 
+### get_pdf_page_count
+
+::: utils.get_pdf_page_count
+
+### get_file_size
+
+::: utils.get_file_size
+
 ### InvalidDocumentKeyError
 
 ::: utils.InvalidDocumentKeyError
@@ -50,3 +58,8 @@
 ### MissingArgumentError
 
 ::: utils.MissingArgumentError
+
+
+### PDFProcessingError
+
+::: utils.PDFProcessingError

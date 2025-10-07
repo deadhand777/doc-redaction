@@ -7,6 +7,42 @@
 ![Linter: Ruff](https://img.shields.io/badge/Linter-Ruff-brightgreen?style=for-the-badge&logoColor=blue&labelColor=grey)
 ![Docs: MkDocs](https://img.shields.io/badge/MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)
 
+
+## Project Structure
+
+The project is organized as follows:
+
+![Agentic Workflow](assets/project_tree.png)
+
+| Path | Type | Description |
+|------|------|-------------|
+| **Root Directory** | | |
+| `pyproject.toml` | Config | Project configuration, dependencies, and build settings |
+| `Makefile` | Build | Development automation commands and build scripts |
+| `README.md` | Doc | Main project documentation and overview |
+| `uv.lock` | Lock | UV package manager lock file for reproducible builds |
+| **/data/** | Directory | Document processing data storage |
+| `/data/contract/` | Directory | Original PDF contract files for processing |
+| `/data/markdown/` | Directory | Converted markdown files from PDF conversion |
+| `/data/confidential/` | Directory | JSON files containing detected sensitive data |
+| `/data/redact/` | Directory | Final redacted document outputs |
+| **/src/doc_redaction/** | Directory | Main application source code |
+| `/src/doc_redaction/__init__.py` | Module | Package initialization file |
+| `/src/doc_redaction/agent.py` | Module | AI agent creation and configuration |
+| `/src/doc_redaction/output.py` | Module | Pydantic models for structured outputs (SensitiveData) |
+| `/src/doc_redaction/promt.py` | Module | System prompts for different AI agents |
+| `/src/doc_redaction/utils.py` | Module | Utility functions and custom exceptions |
+| `/src/doc_redaction/workflow.py` | Module | Main document processing workflow orchestration |
+| **/src/doc_redaction/tool/** | Directory | Processing tools and utilities |
+| `/src/doc_redaction/tool/__init__.py` | Module | Tool package initialization |
+| `/src/doc_redaction/tool/detect_sensitive_data.py` | Tool | Sensitive information detection using regex patterns |
+| `/src/doc_redaction/tool/redact_sensitive_data.py` | Tool | Document redaction and content sanitization |
+| `/src/doc_redaction/tool/tool_utils.py` | Tool | Utility functions for tool operations |
+| `/src/doc_redaction/tool/document_processing.py` | Tool | Large document processing and chunking system |
+| **/tests/** | Directory | Test suite for all application components |
+| `/tests/test_*.py` | Tests | Comprehensive unit and integration tests |
+
+
 ## Tooling
 
 The templete utilizes the following tools for development, testing, and deployment:

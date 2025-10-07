@@ -1,3 +1,6 @@
+import os
+
+import PyPDF2
 from loguru import logger
 
 
@@ -13,6 +16,14 @@ class InvalidDocumentKeyError(ValueError):
 
     def __init__(self) -> None:
         super().__init__("A document key must be provided as a non-empty string.")
+
+
+class PDFProcessingError(Exception):
+    """Raised when PDF processing fails."""
+
+    def __init__(self, file_path: str, e: Exception) -> None:
+        super().__init__(f"Could not determine page count for {file_path}: {e}")
+        self.file_path = file_path
 
 
 def save_as_json(data: str, filename: str) -> None:
@@ -37,3 +48,49 @@ def save_as_json(data: str, filename: str) -> None:
     with open(filename, "w") as f:
         f.write(data)
     logger.info(f"Saved structured output to {filename}")
+
+
+def get_pdf_page_count(file_path: str) -> int:
+    """
+    Return the number of pages in a PDF file.
+
+    Parameters:
+        file_path (str): Path to the local PDF file.
+
+    Returns:
+        int: Total number of pages in the PDF.
+
+    Raises:
+        PDFProcessingError: If the file cannot be opened, is not a valid PDF, or the page count cannot be determined.
+
+    Example:
+        page_count = get_pdf_page_count("path/to/file.pdf")
+        print(f"The document has {page_count} pages.")
+    """
+    try:
+        with open(file_path, "rb") as file:
+            pdf_reader = PyPDF2.PdfReader(file)
+            return len(pdf_reader.pages)
+    except Exception as e:
+        raise PDFProcessingError(file_path, e) from e
+
+
+def get_file_size(file_path: str) -> int:
+    """
+    Return the size of a file in bytes.
+
+        Parameters:
+            file_path (str): Path to the file.
+
+        Returns:
+            int: File size in bytes.
+
+        Raises:
+            FileNotFoundError: If the file does not exist.
+            OSError: If the size cannot be retrieved due to an OS-related error.
+
+        Example:
+            size = get_file_size("/path/to/file.txt")
+            print(f"File size: {size} bytes")
+    """
+    return os.path.getsize(file_path)
