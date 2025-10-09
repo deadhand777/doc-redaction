@@ -12,8 +12,9 @@ class MissingArgumentError(ValueError):
 
 
 class InvalidContentType(TypeError):
+    """Raised when content is neither str nor int."""
+
     def __init__(self, actual_type: type):
-        # Construct the message once here
         super().__init__(f"Content must be str or int, got {actual_type.__name__}")
 
 
