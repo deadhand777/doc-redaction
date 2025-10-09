@@ -11,6 +11,12 @@ class MissingArgumentError(ValueError):
         super().__init__(f"{argument_name} must be provided")
 
 
+class InvalidContentType(TypeError):
+    def __init__(self, actual_type: type):
+        # Construct the message once here
+        super().__init__(f"Content must be str or int, got {actual_type.__name__}")
+
+
 class InvalidDocumentKeyError(ValueError):
     """Raised when the provided document key is missing or invalid."""
 
@@ -24,6 +30,11 @@ class PDFProcessingError(Exception):
     def __init__(self, file_path: str, e: Exception) -> None:
         super().__init__(f"Could not determine page count for {file_path}: {e}")
         self.file_path = file_path
+
+
+class ParameterTypeError(TypeError):
+    def __init__(self, name: str, expected: str):
+        super().__init__(f"Parameter {name!r} must be {expected}")
 
 
 def save_as_json(data: str, filename: str) -> None:

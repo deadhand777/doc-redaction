@@ -22,6 +22,7 @@ dependencies = [
     "diagrams>=0.24.4",
     "loguru>=0.7.3",
     "mlx-vlm>=0.3.3",
+    "pypdf2>=3.0.1",
     "strands-agents-builder>=0.1.10",
     "strands-agents-tools>=0.2.9",
     "strands-agents[ollama]>=1.10.0",
@@ -104,6 +105,10 @@ ignore = [
     "E501",
     # DoNotAssignLambda
     "E731",
+    # Docstring contains ambiguous
+    "RUF002",
+    # Possible hardcoded pw
+    "S107",
 ]
 
 [tool.ruff.lint.mccabe]

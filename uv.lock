@@ -523,6 +523,7 @@ dependencies = [
     { name = "diagrams" },
     { name = "loguru" },
     { name = "mlx-vlm" },
+    { name = "pypdf2" },
     { name = "strands-agents", extra = ["ollama"] },
     { name = "strands-agents-builder" },
     { name = "strands-agents-tools" },
@@ -550,6 +551,7 @@ requires-dist = [
     { name = "diagrams", specifier = ">=0.24.4" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "mlx-vlm", specifier = ">=0.3.3" },
+    { name = "pypdf2", specifier = ">=3.0.1" },
     { name = "strands-agents", extras = ["ollama"], specifier = ">=1.10.0" },
     { name = "strands-agents-builder", specifier = ">=0.1.10" },
     { name = "strands-agents-tools", specifier = ">=0.2.9" },
@@ -2123,6 +2125,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/55/b3/6d2b3f149bc5413b0a29761c2c5832d8ce904a1d7f621e86616d96f505cc/pymdown_extensions-10.16.1.tar.gz", hash = "sha256:aace82bcccba3efc03e25d584e6a22d27a8e17caa3f4dd9f207e49b787aa9a91", size = 853277, upload-time = "2025-07-28T16:19:34.167Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e4/06/43084e6cbd4b3bc0e80f6be743b2e79fbc6eed8de9ad8c629939fa55d972/pymdown_extensions-10.16.1-py3-none-any.whl", hash = "sha256:d6ba157a6c03146a7fb122b2b9a121300056384eafeec9c9f9e584adfdb2a32d", size = 266178, upload-time = "2025-07-28T16:19:31.401Z" },
+]
+
+[[package]]
+name = "pypdf2"
+version = "3.0.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/9f/bb/18dc3062d37db6c491392007dfd1a7f524bb95886eb956569ac38a23a784/PyPDF2-3.0.1.tar.gz", hash = "sha256:a74408f69ba6271f71b9352ef4ed03dc53a31aa404d29b5d31f53bfecfee1440", size = 227419, upload-time = "2022-12-31T10:36:13.13Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8e/5e/c86a5643653825d3c913719e788e41386bee415c2b87b4f955432f2de6b2/pypdf2-3.0.1-py3-none-any.whl", hash = "sha256:d16e4205cfee272fbdc0568b68d82be796540b1537508cef59388f839c191928", size = 232572, upload-time = "2022-12-31T10:36:10.327Z" },
 ]
 
 [[package]]
