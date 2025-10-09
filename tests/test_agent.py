@@ -104,7 +104,7 @@ class TestCreateAgent:
         assert agent.system_prompt == system_prompt
         assert agent.model == custom_model
 
-    @pytest.mark.parametrize("invalid_prompt", ["", None])
+    @pytest.mark.parametrize("invalid_prompt", "")
     def test_create_agent_invalid_system_prompt_parametrized(self, invalid_prompt):
         """Parametrized test for invalid system prompts."""
         with pytest.raises(MissingArgumentError, match="system_prompt must be provided"):

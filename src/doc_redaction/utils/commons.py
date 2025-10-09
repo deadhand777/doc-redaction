@@ -1,6 +1,6 @@
 import os
 
-import PyPDF2
+import pypdf
 from loguru import logger
 
 
@@ -80,7 +80,7 @@ def get_pdf_page_count(file_path: str) -> int:
     """
     try:
         with open(file_path, "rb") as file:
-            pdf_reader = PyPDF2.PdfReader(file)
+            pdf_reader = pypdf.PdfReader(file)
             return len(pdf_reader.pages)
     except Exception as e:
         raise PDFProcessingError(file_path, e) from e
