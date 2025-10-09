@@ -41,25 +41,29 @@
 
 #### save_as_json
 
-::: utils.save_as_json
+::: utils.commons.save_as_json
 
 ### get_pdf_page_count
 
-::: utils.get_pdf_page_count
+::: utils.commons.get_pdf_page_count
 
 ### get_file_size
 
-::: utils.get_file_size
+::: utils.commons.get_file_size
+
+### InvalidContentType
+
+::: utils.commons.InvalidContentType
 
 ### InvalidDocumentKeyError
 
-::: utils.InvalidDocumentKeyError
+::: utils.commons.InvalidDocumentKeyError
 
 ### MissingArgumentError
 
-::: utils.MissingArgumentError
+::: utils.commons.MissingArgumentError
 
 
 ### PDFProcessingError
 
-::: utils.PDFProcessingError
+::: utils.commons.PDFProcessingError

@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from typing import Any
 
 from loguru import logger
@@ -5,7 +6,7 @@ from strands import Agent
 from strands.models import BedrockModel
 from strands.models.ollama import OllamaModel
 
-from doc_redaction.utils import MissingArgumentError
+from doc_redaction.utils.commons import MissingArgumentError, ParameterTypeError
 
 MODEL_IDS: dict[str, str] = {
     "default": "eu.anthropic.claude-sonnet-4-20250514-v1:0",
@@ -24,44 +25,50 @@ bedrock_model: BedrockModel = BedrockModel(
 
 def create_agent(
     system_prompt: str,
+    name: str | None = "Strands Agent",
     model: BedrockModel | OllamaModel | None = bedrock_model,
-    tools: list[str | dict[str, str] | Any] | None = None,
+    tools: Sequence[str | dict[str, str] | Any] | None = None,
 ) -> Agent:
     """
     Create and return a configured Agent.
 
-    Initializes a strands Agent with the provided BedrockModel, system prompt, and tools.
-
-    Parameters:
-    - model: BedrockModel powering the Agent.
-    - system_prompt: Instructional prompt guiding the Agent.
-    - tools: Optional list of tool names, specs, or tool objects to register.
-
-    Returns:
-    - Agent: The initialized Agent instance.
+    - system_prompt: Required non-empty instructional prompt.
+    - name: Optional agent name (default: "Strands Agent").
+    - model: Optional model. Falls back to default bedrock_model if None.
+    - tools: Optional iterable of tool specs/objects. Converted internally to a list.
 
     Raises:
-    - ValueError: If model or system_prompt is not provided.
-
-    Example:
-    ```python
-    agent = create_agent(
-        model=bedrock_model,
-        system_prompt=SYSTEM_PROMPT,
-    )
-    ```
+        MissingArgumentError: If system_prompt is missing or empty.
+        TypeError: If system_prompt is not a string.
     """
-    if not model:
-        model = bedrock_model
-    if not system_prompt:
+    if not isinstance(system_prompt, str):
+        raise ParameterTypeError("system_prompt", "a string")
+    if not system_prompt.strip():
         raise MissingArgumentError("system_prompt")
+
+    # Fallback to default model if none provided
+    if model is None:
+        model = bedrock_model
+
+    # Normalize tools to a list (avoid mutable default pitfalls)
+    tools_list: list[str | dict[str, str] | Any] | None = list(tools) if tools else None
 
     agent: Agent = Agent(
         model=model,
-        system_prompt=system_prompt,
-        tools=tools,
+        system_prompt=system_prompt.strip(),
+        tools=tools_list,
     )
 
-    logger.info("Agent created successfully.")
+    if type(model) is BedrockModel:
+        agent.name = name
+
+    logger.info(
+        "Agent created successfully",
+        extra={
+            "agent_name": name,
+            "model_id": getattr(model, "model_id", "unknown"),
+            "tools_count": len(tools_list) if tools_list else 0,
+        },
+    )
 
     return agent

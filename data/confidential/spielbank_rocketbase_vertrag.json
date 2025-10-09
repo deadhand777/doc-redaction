@@ -47,7 +47,8 @@
     "credit_card_numbers": [],
     "account_numbers": [],
     "currency_amounts": [
-      "10.000 \u20ac"
+      "10.000 \u20ac",
+      "zehntausend Euro"
     ],
     "number_words": [
       "zehntausend",

@@ -1,6 +1,6 @@
 import os
 
-import PyPDF2
+import pypdf
 from loguru import logger
 
 
@@ -9,6 +9,12 @@ class MissingArgumentError(ValueError):
 
     def __init__(self, argument_name: str) -> None:
         super().__init__(f"{argument_name} must be provided")
+
+
+class InvalidContentType(TypeError):
+    def __init__(self, actual_type: type):
+        # Construct the message once here
+        super().__init__(f"Content must be str or int, got {actual_type.__name__}")
 
 
 class InvalidDocumentKeyError(ValueError):
@@ -24,6 +30,11 @@ class PDFProcessingError(Exception):
     def __init__(self, file_path: str, e: Exception) -> None:
         super().__init__(f"Could not determine page count for {file_path}: {e}")
         self.file_path = file_path
+
+
+class ParameterTypeError(TypeError):
+    def __init__(self, name: str, expected: str):
+        super().__init__(f"Parameter {name!r} must be {expected}")
 
 
 def save_as_json(data: str, filename: str) -> None:
@@ -69,7 +80,7 @@ def get_pdf_page_count(file_path: str) -> int:
     """
     try:
         with open(file_path, "rb") as file:
-            pdf_reader = PyPDF2.PdfReader(file)
+            pdf_reader = pypdf.PdfReader(file)
             return len(pdf_reader.pages)
     except Exception as e:
         raise PDFProcessingError(file_path, e) from e
