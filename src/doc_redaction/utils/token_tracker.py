@@ -9,41 +9,6 @@ from doc_redaction.utils.commons import InvalidContentType
 
 bedrock_runtime = boto3.client("bedrock-runtime")
 
-
-# def summarize_token_usage(all_agents_tokens: dict[str, dict[str, Any]]) -> dict[str, Any]:
-#         """Summarize token usage across all agents by token type and grand totals."""
-#
-#         summed_by_type: dict[str, dict[str, Any]] = {}
-#         for input_type in ["inputTokens", "outputTokens"]:
-#             total_tokens = 0
-#             total_costs = 0.0
-#
-#             for agent_name, agent_data in all_agents_tokens.items():
-#                 if isinstance(agent_data, dict) and input_type in agent_data:
-#                     token_data = agent_data[input_type]
-#                     if isinstance(token_data, dict):
-#                         total_tokens += token_data.get("tokens", 0)
-#                         total_costs += token_data.get("costs", 0.0)
-#
-#             summed_by_type[input_type] = {
-#                 "total_tokens": total_tokens,
-#                 "total_costs": total_costs,
-#             }
-#
-#         # Calculate grand totals
-#         grand_total_tokens: int = sum(data.get("total_tokens", 0) for data in summed_by_type.values())
-#         grand_total_costs: float = sum(data.get("total_costs", 0.0) for data in summed_by_type.values())
-#
-#         summary: dict[str, Any] = {
-#             "token_type": summed_by_type,
-#             "grand_total": {
-#                 "tokens": grand_total_tokens,
-#                 "costs": grand_total_costs
-#             },
-#         }
-#
-#         return json.dumps(summary)
-
 INPUT_TYPES: tuple = ("inputTokens", "outputTokens")
 
 _COST_RATES: dict[str, float] = {
@@ -177,13 +142,6 @@ def _calculate_token_cost(token: int, model: str = MODEL_IDS["default"], token_t
     Example:
         cost = _calculate_token_cost(token=1500, model="eu.anthropic.claude-sonnet-4-20250514-v1:0", token_type="output")
     """
-
-    # cost_rates: dict[str, float] = {
-    #     "anthropic_inputTokens": 3.0 / 1_000_000,
-    #     "anthropic_outputTokens": 15.0 / 1_000_000,
-    #     "amazon_inputTokens": 0.96 / 1_000_000,
-    #     "amazon_outputTokens": 3.84 / 1_000_000,
-    # }
 
     cost_category: str = f"{model.split(sep='.')[1]}_{token_type}"
 

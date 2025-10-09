@@ -32,8 +32,6 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
     if not isinstance(key, str) or not key:
         raise InvalidDocumentKeyError()
 
-    # DOC_KEY: str = key
-
     # Step 1: Convert input contract from PDF to markdwon format
     multimodal_agent: Agent = create_agent(
         name="MultimodalAgent",

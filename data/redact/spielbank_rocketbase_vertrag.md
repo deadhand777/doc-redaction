@@ -30,7 +30,7 @@ Die <REDACTED> erbringt für die <REDACTED> Softwareentwicklungs-, Systemintegra
 
 ## §2 Vergütung
 
-Die <REDACTED> zahlt der <REDACTED> für die in §1 beschriebenen Leistungen eine <REDACTED> in Höhe von <REDACTED> (<REDACTED> Euro). Die Vergütung ist jeweils am <REDACTED> fällig. Alle Beträge verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer.
+Die <REDACTED> zahlt der <REDACTED> für die in §1 beschriebenen Leistungen eine <REDACTED> in Höhe von <REDACTED> (<REDACTED>). Die Vergütung ist jeweils am <REDACTED> ohne Abzüge fällig. Alle Beträge verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer.
 
 ## §3 Vertraulichkeit
 
