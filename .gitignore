@@ -212,6 +212,7 @@ __marimo__/
 
 ## Local
 .qodo
-# data
+data/contract/local/
+data/temp/
 local
 .DS_Store

@@ -10,8 +10,10 @@ from doc_redaction.utils.commons import MissingArgumentError, ParameterTypeError
 
 MODEL_IDS: dict[str, str] = {
     "default": "eu.anthropic.claude-sonnet-4-20250514-v1:0",
-    "experimental": "eu.anthropic.claude-sonnet-4-5-20250929-v1:0",
-    "processing": "eu.amazon.nova-lite-v1:0",
+    "sonnet4_5": "eu.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "haiku": "eu.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "nova_lite": "eu.amazon.nova-lite-v1:0",
+    "nova_pro": "eu.amazon.nova-pro-v1:0",
 }
 REGION: str = "eu-central-1"
 
@@ -20,6 +22,9 @@ bedrock_model: BedrockModel = BedrockModel(
     region_name=REGION,
     streaming=False,
     temperature=0,
+    cache_prompt="default",
+    cache_tools="default",
+    max_tokens=65536,
 )
 
 

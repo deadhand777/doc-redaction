@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 import pypdf
 from loguru import logger
@@ -16,6 +17,13 @@ class InvalidContentType(TypeError):
 
     def __init__(self, actual_type: type):
         super().__init__(f"Content must be str or int, got {actual_type.__name__}")
+
+
+class InvalidDocumentFormatError(ValueError):
+    """Raised when the document format is unsupported."""
+
+    def __init__(self, doc_format: str) -> None:
+        super().__init__(f"Invalid document format: {doc_format}")
 
 
 class InvalidDocumentKeyError(ValueError):
@@ -57,6 +65,9 @@ def save_as_json(data: str, filename: str) -> None:
     Example:
         save_as_json(res, "data/confidential/rocketbase_aws_agreement_sensitive_structures.json")
     """
+    output_dir = Path(filename).parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     with open(filename, "w") as f:
         f.write(data)
     logger.info(f"Saved structured output to {filename}")

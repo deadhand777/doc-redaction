@@ -6,7 +6,7 @@ class DocumentAnalysis(BaseModel):
 
     document_name: str = Field(..., description="The name of the document.")
     document_type: str = Field(..., description="The type of the document.")
-    analysis_date: str = Field(..., description="The date of the analysis.")
+    # analysis_date: str = Field(..., description="The current timestamp. Determined at analysis time by the current_time tool.")
     sensitive_data_detected: bool = Field(..., description="Whether sensitive data was detected.")
 
 

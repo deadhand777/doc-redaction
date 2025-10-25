@@ -12,10 +12,14 @@ bedrock_runtime = boto3.client("bedrock-runtime")
 INPUT_TYPES: tuple = ("inputTokens", "outputTokens")
 
 _COST_RATES: dict[str, float] = {
-    "anthropic_inputTokens": 3.0 / 1_000_000,
-    "anthropic_outputTokens": 15.0 / 1_000_000,
-    "amazon_inputTokens": 0.96 / 1_000_000,
-    "amazon_outputTokens": 3.84 / 1_000_000,
+    "amazon.nova-lite-v1:0_inputTokens": 0.078 / 1_000_000,
+    "amazon.nova-lite-v1:0_outputTokens": 0.0195 / 1_000_000,
+    "anthropic.claude-haiku-4-5-20251001-v1:0_inputTokens": 0.25 / 1_000_000,
+    "anthropic.claude-haiku-4-5-20251001-v1:0_outputTokens": 1.25 / 1_000_000,
+    "anthropic.claude-sonnet-4-20250514-v1:0_inputTokens": 3.0 / 1_000_000,
+    "anthropic.claude-sonnet-4-20250514-v1:0_outputTokens": 15.0 / 1_000_000,
+    "anthropic.claude-sonnet-4-5-20250929-v1:0_inputTokens": 3.3 / 1_000_000,
+    "anthropic.claude-sonnet-4-5-20250929-v1:0_outputTokens": 16.5 / 1_000_000,
 }
 
 
@@ -97,7 +101,11 @@ def count_tokens(
     """
 
     if isinstance(content, str):
-        input_to_count = json.dumps({"anthropic_version": "bedrock-2023-05-31", "max_tokens": 500, "messages": [{"role": "user", "content": content}]})
+        input_to_count = json.dumps({
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": 500,
+            "messages": [{"role": "user", "content": content}],
+        })
 
         response: dict[str, Any] = bedrock_runtime.count_tokens(modelId=model.removeprefix("eu."), input={"invokeModel": {"body": input_to_count}})
 
@@ -143,6 +151,6 @@ def _calculate_token_cost(token: int, model: str = MODEL_IDS["default"], token_t
         cost = _calculate_token_cost(token=1500, model="eu.anthropic.claude-sonnet-4-20250514-v1:0", token_type="output")
     """
 
-    cost_category: str = f"{model.split(sep='.')[1]}_{token_type}"
+    cost_category: str = f"{model.removeprefix('eu.')}_{token_type}"
 
     return token * _COST_RATES[cost_category]

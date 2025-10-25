@@ -22,7 +22,9 @@ dependencies = [
     "diagrams>=0.24.4",
     "loguru>=0.7.3",
     "mlx-vlm>=0.3.3",
+    "pymupdf>=1.26.5",
     "pypdf>=6.1.1",
+    "pytesseract>=0.3.13",
     "strands-agents-builder>=0.1.10",
     "strands-agents-tools>=0.2.9",
     "strands-agents[ollama]>=1.10.0",
@@ -109,6 +111,8 @@ ignore = [
     "RUF002",
     # Possible hardcoded pw
     "S107",
+    # Try to avoid using bare except
+    "TRY300",
 ]
 
 [tool.ruff.lint.mccabe]

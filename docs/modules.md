@@ -16,7 +16,6 @@
 
 ::: output.SensitiveData
 
-
 ## Tool Modules
 
 ### detect_sensitive_data
@@ -32,6 +31,10 @@
 ::: tool.store_data.save_as_json
 
 ### Other Tools
+
+::: tool.tool_utils.save_file
+
+::: tool.tool_utils.remove_temp_files
 
 ::: tool.tool_utils.omit_empty_keys
 
