@@ -4,6 +4,7 @@ import typer
 from loguru import logger
 from strands import Agent
 from strands.multiagent import GraphBuilder
+from strands.multiagent.graph import Graph, GraphResult
 from strands_tools import current_time, image_reader
 
 from doc_redaction.agent import MODEL_IDS, create_agent
@@ -60,7 +61,7 @@ FORMAT: dict[str, str] = {
 }
 
 
-def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
+def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[dict[str, Any], GraphResult, str]:
     """
     Run the document processing workflow for a given document key.
     """
@@ -117,7 +118,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
     redact_agent.model.update_config(model_id=MODEL_IDS["haiku"])
 
     # Step 4: Build and run workflow graph
-    builder = GraphBuilder()
+    builder: GraphBuilder = GraphBuilder()
 
     builder.add_node(multimodal_agent, "convert_result")
     builder.add_node(detector_agent, "detector_result")
@@ -129,7 +130,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
 
     builder.set_entry_point("convert_result")
     builder.set_execution_timeout(300)
-    graph = builder.build()
+    graph: Graph = builder.build()
 
     user_prompt: str = f"""
     1. Convert the following list of images to a single markdown: {CONVERT_IN}. Save the result to {CONVERT_OUT}.
@@ -137,10 +138,10 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
     3. Redact all information provided in detector_result except for the document_analysis field. Save the result to {REDACT_OUT}.
     """
 
-    result = graph(user_prompt)
+    result: GraphResult = graph(user_prompt)
 
     logger.info(f"Workflow status: {result.status.value}")
-    logger.info(f"{multimodal_agent.name} token usage: {result.accumulated_usage}")
+    logger.info(f"Total token usage: {result.accumulated_usage}")
 
     # Step 5: Summarize token usage
     agents: list[Agent] = [multimodal_agent, detector_agent, redact_agent]
