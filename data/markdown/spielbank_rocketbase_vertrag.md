@@ -1,17 +1,17 @@
 # Technologie-Dienstleistungsvertrag
 
-**Zwischen**
+## Zwischen
 
-Spielbank AG
+**Spielbank AG**
 Kaiserstraße 45
 60329 Frankfurt am Main
 Deutschland
 Handelsregisternummer: HRB 123456
 Vertreten durch: Dr. Hans Meier, Vorstandsvorsitzender
 
-**und**
+und
 
-Rocketbase GmbH
+**Rocketbase GmbH**
 Schulterblatt 23
 20357 Hamburg
 Deutschland
@@ -51,9 +51,11 @@ Dieser Vertrag unterliegt dem Recht der Bundesrepublik Deutschland. Gerichtsstan
 **Für die Spielbank AG:**
 
 _____________________
+
 Dr. Hans Meier, Vorstandsvorsitzender
 
 **Für die Rocketbase GmbH:**
 
 _____________________
+
 Lisa Schneider, Geschäftsführerin

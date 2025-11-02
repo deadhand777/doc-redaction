@@ -1,36 +1,34 @@
 # Technologie-Dienstleistungsvertrag
 
-## Vertragsparteien
+## Zwischen
 
-**Zwischen**
+**[COMPANY_NAME_1]**
+[ADDRESS_LINE_1]
+[POSTAL_CODE] [CITY_1]
+[COUNTRY]
+Handelsregisternummer: [REGISTRATION_NUMBER_1]
+Vertreten durch: [PERSON_NAME_1], [TITLE_1]
 
-**<REDACTED>**
-<REDACTED>
-<REDACTED>
-Deutschland
-Handelsregisternummer: <REDACTED>
-Vertreten durch: <REDACTED>, <REDACTED>
+und
 
-**und**
-
-**<REDACTED>**
-<REDACTED>
-<REDACTED>
-Deutschland
-Handelsregisternummer: <REDACTED>
-Vertreten durch: <REDACTED>, <REDACTED>
+**[COMPANY_NAME_2]**
+[ADDRESS_LINE_2]
+[POSTAL_CODE] [CITY_2]
+[COUNTRY]
+Handelsregisternummer: [REGISTRATION_NUMBER_2]
+Vertreten durch: [PERSON_NAME_2], [TITLE_2]
 
 ## Präambel
 
-Die <REDACTED>, ein deutsches Kreditinstitut, benötigt technologische Lösungen und Dienstleistungen zur Unterstützung ihrer digitalen Bankinfrastruktur. Die <REDACTED> ist ein Technologieanbieter, der auf die Bereitstellung solcher Lösungen spezialisiert ist. Beide Parteien schließen diesen Vertrag, um die Bedingungen ihrer Zusammenarbeit zu regeln.
+Die [COMPANY_NAME_1], ein deutsches Kreditinstitut, benötigt technologische Lösungen und Dienstleistungen zur Unterstützung ihrer digitalen Bankinfrastruktur. Die [COMPANY_NAME_2] ist ein Technologieanbieter, der auf die Bereitstellung solcher Lösungen spezialisiert ist. Beide Parteien schließen diesen Vertrag, um die Bedingungen ihrer Zusammenarbeit zu regeln.
 
 ## §1 Leistungsumfang
 
-Die <REDACTED> erbringt für die <REDACTED> Softwareentwicklungs-, Systemintegrations-, Wartungs- und Supportdienstleistungen. Die konkreten Leistungen, Zeitpläne und Meilensteine werden in separaten Leistungsbeschreibungen (Statements of Work, SOW) festgelegt.
+Die [COMPANY_NAME_2] erbringt für die [COMPANY_NAME_1] Softwareentwicklungs-, Systemintegrations-, Wartungs- und Supportdienstleistungen. Die konkreten Leistungen, Zeitpläne und Meilensteine werden in separaten Leistungsbeschreibungen (Statements of Work, SOW) festgelegt.
 
 ## §2 Vergütung
 
-Die <REDACTED> zahlt der <REDACTED> für die in §1 beschriebenen Leistungen eine <REDACTED> in Höhe von <REDACTED> (<REDACTED>). Die Vergütung ist jeweils am <REDACTED> ohne Abzüge fällig. Alle Beträge verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer.
+Die [COMPANY_NAME_1] zahlt der [COMPANY_NAME_2] für die in §1 beschriebenen Leistungen eine monatliche Vergütung in Höhe von [AMOUNT] € ([AMOUNT_WORDS] Euro). Die Vergütung ist jeweils am Monatsende ohne Abzüge fällig. Alle Beträge verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer.
 
 ## §3 Vertraulichkeit
 
@@ -38,24 +36,26 @@ Beide Parteien verpflichten sich, alle als vertraulich gekennzeichneten oder erk
 
 ## §4 Datenschutz
 
-Die <REDACTED> verpflichtet sich, bei der Verarbeitung personenbezogener Daten alle anwendbaren Datenschutzgesetze, insbesondere die Datenschutz-Grundverordnung (DSGVO), einzuhalten.
+Die [COMPANY_NAME_2] verpflichtet sich, bei der Verarbeitung personenbezogener Daten alle anwendbaren Datenschutzgesetze, insbesondere die Datenschutz-Grundverordnung (DSGVO), einzuhalten.
 
 ## §5 Laufzeit und Kündigung
 
-Dieser Vertrag tritt am 01.09.2025 in Kraft und läuft zunächst für <REDACTED>. Er verlängert sich jeweils automatisch um weitere <REDACTED>, sofern er nicht von einer der Parteien mit einer Frist von <REDACTED> (<REDACTED>) Monaten zum Ablauf der jeweiligen Laufzeit schriftlich gekündigt wird.
+Dieser Vertrag tritt am [START_DATE] in Kraft und läuft zunächst für [INITIAL_DURATION] Monate. Er verlängert sich jeweils automatisch um weitere [RENEWAL_DURATION] Monate, sofern er nicht von einer der Parteien mit einer Frist von [NOTICE_PERIOD] Monaten zum Ablauf der jeweiligen Laufzeit schriftlich gekündigt wird.
 
 ## §6 Anwendbares Recht und Gerichtsstand
 
-Dieser Vertrag unterliegt dem Recht der Bundesrepublik Deutschland. Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist Frankfurt am Main.
+Dieser Vertrag unterliegt dem Recht der [JURISDICTION]. Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist [COURT_LOCATION].
 
 ## Unterschriften
 
-**Für die <REDACTED>:**
+**Für die [COMPANY_NAME_1]:**
 
-___________________________
-<REDACTED>, <REDACTED>
+_____________________
 
-**Für die <REDACTED>:**
+[PERSON_NAME_1], [TITLE_1]
 
-___________________________
-<REDACTED>, <REDACTED>.
+**Für die [COMPANY_NAME_2]:**
+
+_____________________
+
+[PERSON_NAME_2], [TITLE_2]
