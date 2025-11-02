@@ -1,8 +1,32 @@
 import os
+from dataclasses import dataclass
 from pathlib import Path
 
 import pypdf
 from loguru import logger
+
+
+@dataclass
+class Dir:
+    Data: str = "data/"
+
+
+@dataclass
+class Prefix:
+    CONFIDENTIAL: str = "confidential/"
+    CONTRACT: str = "contract/"
+    MARKDOWN: str = "markdown/"
+    QUALITY: str = "quality/"
+    REDACT: str = "redact/"
+    TEMP: str = "temp/img/"
+    TOKEN: str = "token/"
+
+
+@dataclass
+class Format:
+    JSON: str = ".json"
+    MD: str = ".md"
+    PDF: str = ".pdf"
 
 
 class MissingArgumentError(ValueError):

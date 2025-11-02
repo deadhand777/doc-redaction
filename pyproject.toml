@@ -110,6 +110,7 @@ ignore = [
     # Docstring contains ambiguous
     "RUF002",
     # Possible hardcoded pw
+    "S105",
     "S107",
     # Try to avoid using bare except
     "TRY300",

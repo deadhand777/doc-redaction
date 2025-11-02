@@ -17,7 +17,7 @@ from doc_redaction.promt import (
 from doc_redaction.tool.detect_sensitive_data import detect_sensitive_data
 from doc_redaction.tool.redact_sensitive_data import redact_sensitive_data
 from doc_redaction.tool.tool_utils import omit_empty_keys, remove_temp_files, save_file
-from doc_redaction.utils.commons import InvalidDocumentKeyError, save_as_json
+from doc_redaction.utils.commons import Dir, Format, InvalidDocumentKeyError, Prefix, save_as_json
 from doc_redaction.utils.doc_assessment import assess_doc_quality
 from doc_redaction.utils.doc_reader import merge_markdown_strings, pdf_to_png
 from doc_redaction.utils.token_tracker import summarize_token_usage, token_usage
@@ -44,23 +44,6 @@ def process_and_summarize_tokens(agents: list[Agent], result: Any) -> str:
     return result
 
 
-DIR: str = "data/"
-PREFIX: dict[str, str] = {
-    "confidential": "confidential/",
-    "contract": "contract/",
-    "markdown": "markdown/",
-    "quality": "quality/",
-    "redact": "redact/",
-    "temp": "temp/img/",
-    "token": "token/",
-}
-FORMAT: dict[str, str] = {
-    "json": ".json",
-    "md": ".md",
-    "pdf": ".pdf",
-}
-
-
 def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[dict[str, Any], GraphResult, str]:
     """
     Run the document processing workflow for a given document key.
@@ -69,8 +52,8 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[di
         raise InvalidDocumentKeyError()
 
     # Step 0: Assess document quality
-    DOC_QUALITY_IN: str = f"{DIR}{PREFIX['contract']}{key}{FORMAT['pdf']}"
-    DOC_QUALITY_OUT: str = f"{DIR}{PREFIX['quality']}{key}{FORMAT['json']}"
+    DOC_QUALITY_IN: str = f"{Dir.Data}{Prefix.CONTRACT}{key}{Format.PDF}"
+    DOC_QUALITY_OUT: str = f"{Dir.Data}{Prefix.QUALITY}{key}{Format.JSON}"
     doc_quality: dict[str, Any] = assess_doc_quality(
         file_path=DOC_QUALITY_IN,
         output_path=DOC_QUALITY_OUT,
@@ -89,13 +72,13 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[di
     )
 
     CONVERT_IN: list[str] = pdf_to_png(
-        pdf_path=f"{DIR}{PREFIX['contract']}{key}{FORMAT['pdf']}",
-        output_dir=f"{DIR}{PREFIX['temp']}",
+        pdf_path=f"{Dir.Data}{Prefix.CONTRACT}{key}{Format.PDF}",
+        output_dir=f"{Dir.Data}{Prefix.TEMP}",
     )
-    CONVERT_OUT: str = f"{DIR}{PREFIX['markdown']}{key}{FORMAT['md']}"
+    CONVERT_OUT: str = f"{Dir.Data}{Prefix.MARKDOWN}{key}{Format.MD}"
 
     # Step 2: Detect sensitve information Agent
-    DETECT_OUT: str = f"{DIR}{PREFIX['confidential']}{key}{FORMAT['json']}"
+    DETECT_OUT: str = f"{Dir.Data}{Prefix.CONFIDENTIAL}{key}{Format.JSON}"
     detector_agent: Agent = create_agent(
         name="detector_agent",
         system_prompt=DETECTION_SYSTEM_PROMPT,
@@ -108,7 +91,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[di
     detector_agent.model.update_config(model_id=MODEL_IDS["haiku"])
 
     # Step 3: Redact sensitive information Agent
-    REDACT_OUT: str = f"{DIR}{PREFIX['redact']}{key}{FORMAT['md']}"
+    REDACT_OUT: str = f"{Dir.Data}{Prefix.REDACT}{key}{Format.MD}"
 
     redact_agent: Agent = create_agent(
         name="redact_agent",
@@ -146,7 +129,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[di
     # Step 5: Summarize token usage
     agents: list[Agent] = [multimodal_agent, detector_agent, redact_agent]
     token_summary: str = process_and_summarize_tokens(agents, result)
-    TOKEN_SUMMARY_OUT: str = f"{DIR}{PREFIX['token']}{key}{FORMAT['json']}"
+    TOKEN_SUMMARY_OUT: str = f"{Dir.Data}{Prefix.TOKEN}{key}{Format.JSON}"
     save_as_json(data=token_summary, filename=TOKEN_SUMMARY_OUT)
 
     return doc_quality, result, token_summary
