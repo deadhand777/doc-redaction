@@ -1,0 +1,88 @@
+{
+  "file_info": {
+    "total_pages": 2,
+    "file_size_mb": 0.039183616638183594,
+    "is_encrypted": 0,
+    "metadata": {
+      "format": "PDF 1.3",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "",
+      "producer": "macOS Version 15.7 (Build 24G222) Quartz PDFContext",
+      "creationDate": "D:20250930084613Z00'00'",
+      "modDate": "D:20250930084613Z00'00'",
+      "trapped": "",
+      "encryption": null
+    },
+    "is_pdf": true,
+    "page_count": 2
+  },
+  "extraction_metrics": {
+    "total_characters": 2555,
+    "total_words": 299,
+    "total_lines": 62,
+    "total_text_blocks": 14,
+    "total_images": 0,
+    "average_chars_per_page": 1277.5,
+    "pages_with_content": 2,
+    "pages_without_content": 0,
+    "image_only_pages": 0,
+    "average_text_density": 0.0022580791575889615
+  },
+  "content_analysis": {
+    "has_meaningful_content": true,
+    "contains_numbers": true,
+    "contains_special_chars": true,
+    "page_details": [
+      {
+        "page_number": 1,
+        "text_length": 1615,
+        "text_blocks_count": 9,
+        "image_count": 0,
+        "character_count": 1394,
+        "word_count": 185,
+        "line_count": 37,
+        "page_dimensions": {
+          "width": 612.0,
+          "height": 792.0
+        },
+        "text_density": 0.0028759820426487092,
+        "rotation": 0,
+        "has_images": false,
+        "is_image_page": false,
+        "fonts_used": [
+          "Calibri-Bold",
+          "Cambria"
+        ]
+      },
+      {
+        "page_number": 2,
+        "text_length": 940,
+        "text_blocks_count": 5,
+        "image_count": 0,
+        "character_count": 795,
+        "word_count": 114,
+        "line_count": 26,
+        "page_dimensions": {
+          "width": 612.0,
+          "height": 792.0
+        },
+        "text_density": 0.0016401762725292137,
+        "rotation": 0,
+        "has_images": false,
+        "is_image_page": false,
+        "fonts_used": [
+          "Calibri-Bold",
+          "Cambria"
+        ]
+      }
+    ]
+  },
+  "potential_issues": [],
+  "recommendations": [
+    "Text extraction appears successful"
+  ],
+  "document_quality": "high"
+}

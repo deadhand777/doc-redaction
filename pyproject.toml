@@ -16,19 +16,19 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "bedrock-agentcore>=0.1.5",
-    "bedrock-agentcore-starter-toolkit>=0.1.14",
-    "boto3>=1.40.41",
+    "bedrock-agentcore>=1.0.5",
+    "bedrock-agentcore-starter-toolkit>=0.1.27",
+    "boto3>=1.40.62",
     "diagrams>=0.24.4",
     "loguru>=0.7.3",
-    "mlx-vlm>=0.3.3",
+    "mlx-vlm>=0.3.5",
     "pymupdf>=1.26.5",
-    "pypdf>=6.1.1",
+    "pypdf>=6.1.3",
     "pytesseract>=0.3.13",
     "strands-agents-builder>=0.1.10",
-    "strands-agents-tools>=0.2.9",
-    "strands-agents[ollama]>=1.10.0",
-    "uv>=0.8.22",
+    "strands-agents-tools>=0.2.13",
+    "strands-agents[ollama]>=1.14.0",
+    "uv>=0.9.6",
 ]
 
 [project.urls]
@@ -39,13 +39,13 @@ Documentation = "https://deadhand777.github.io/doc-redaction/"
 
 [dependency-groups]
 dev = [
-    "pytest>=7.2.0",
+    "pytest>=8.4.2",
     "pre-commit>=4.3.0",
-    "tox-uv>=1.28.0",
-    "ty>=0.0.1a21",
-    "ruff>=0.11.5",
+    "tox-uv>=1.29.0",
+    "ty>=0.0.1a25",
+    "ruff>=0.14.2",
     "mkdocs>=1.6.1",
-    "mkdocs-material>=9.6.20",
+    "mkdocs-material>=9.6.22",
     "mkdocstrings[python]>=0.30.1",
     "directory-tree>=1.0.0",
 ]

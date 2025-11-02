@@ -1,10 +1,8 @@
 # Technologie-Dienstleistungsvertrag
 
-## Vertragsparteien
-
 **Zwischen**
 
-**Spielbank AG**
+Spielbank AG
 Kaiserstraße 45
 60329 Frankfurt am Main
 Deutschland
@@ -13,7 +11,7 @@ Vertreten durch: Dr. Hans Meier, Vorstandsvorsitzender
 
 **und**
 
-**Rocketbase GmbH**
+Rocketbase GmbH
 Schulterblatt 23
 20357 Hamburg
 Deutschland
@@ -52,10 +50,10 @@ Dieser Vertrag unterliegt dem Recht der Bundesrepublik Deutschland. Gerichtsstan
 
 **Für die Spielbank AG:**
 
-___________________________
+_____________________
 Dr. Hans Meier, Vorstandsvorsitzender
 
 **Für die Rocketbase GmbH:**
 
-___________________________
+_____________________
 Lisa Schneider, Geschäftsführerin

@@ -86,7 +86,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
     # Step 2: Detect sensitve information
     DETECT_OUT: str = f"{DIR}{PREFIX['confidential']}{key}{FORMAT['json']}"
     DETECT_USER_PROMPT: str = f"""
-    Analyze the following document: {convert_result!s}.
+    Analyze the following document: {convert_result}.
     Detect sensitive data.
     """
 
