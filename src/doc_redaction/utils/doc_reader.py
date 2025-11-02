@@ -30,7 +30,7 @@ class PDFNotFoundError(FileNotFoundError):
 class PDFOpenError(ValueError):
     """Raised when a PDF cannot be opened with PyMuPDF."""
 
-    def __init__(self, pdf_path: str, original_error: Exception) -> None:
+    def __init__(self, pdf_path: str | pathlib.Path, original_error: Exception) -> None:
         super().__init__(f"Cannot open PDF '{pdf_path}': {original_error}")
         self.pdf_path = pdf_path
         self.original_error = original_error

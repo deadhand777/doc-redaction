@@ -1,6 +1,6 @@
 import datetime
 import json
-from typing import Any, Literal
+from typing import Any
 
 import boto3
 
@@ -46,11 +46,7 @@ def summarize_token_usage(all_agents_tokens: dict[str, dict[str, Any]]) -> str:
     return json.dumps(summary)
 
 
-def token_usage(
-    content: str | dict[str, Any],
-    model: str = MODEL_IDS["default"],
-    token_type: Literal["inputTokens", "outputTokens"] = "outputTokens",
-) -> dict[str, dict[str, Any]]:
+def token_usage(content: str | dict[str, Any], model: str = MODEL_IDS["default"], token_type: str = "outputTokens") -> dict[str, dict[str, Any]]:
     """Calculate token usage for the entire workflow."""
 
     if isinstance(content, str):
@@ -74,7 +70,7 @@ def token_usage(
 def count_tokens(
     content: str | int,
     model: str = MODEL_IDS["default"],
-    token_type: Literal["inputTokens", "outputTokens"] = "outputTokens",
+    token_type: str = "outputTokens",
 ) -> dict[str, Any]:
     """
     Count tokens for model input and estimate cost using Bedrock.
@@ -132,7 +128,7 @@ def count_tokens(
     return result
 
 
-def _calculate_token_cost(token: int, model: str = MODEL_IDS["default"], token_type: Literal["inputTokens", "outputTokens"] = "outputTokens") -> float:
+def _calculate_token_cost(token: int, model: str = MODEL_IDS["default"], token_type: str = "outputTokens") -> float:
     """
     Estimate the token cost for a given model and token type using per‑million token rates.
 
