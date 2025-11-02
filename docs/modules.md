@@ -6,9 +6,13 @@
 
 ### Agentic Workflow Modules
 
-## run_doc_processing_wf
+#### run_doc_processing_wf
 
 ::: workflow.run_doc_processing_wf
+
+#### process_and_summarize_tokens
+
+::: workflow.process_and_summarize_tokens
 
 ## Output Modules
 

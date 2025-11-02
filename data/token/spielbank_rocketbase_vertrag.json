@@ -1,16 +1,1 @@
-{
-  "token_type": {
-    "inputTokens": {
-      "total_tokens": 13118,
-      "total_costs": 0.039354
-    },
-    "outputTokens": {
-      "total_tokens": 3601,
-      "total_costs": 0.054015
-    }
-  },
-  "grand_total": {
-    "tokens": 16719,
-    "costs": 0.09336900000000001
-  }
-}
+"{\"token_type\": {\"inputTokens\": {\"total_tokens\": 17445, \"total_costs\": 0.041216749999999996}, \"outputTokens\": {\"total_tokens\": 4348, \"total_costs\": 0.05706625}}, \"grand_total\": {\"tokens\": 21793, \"costs\": 0.098283}}"

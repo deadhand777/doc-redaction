@@ -1,68 +1,129 @@
 {
+  "document_type": "Technologie-Dienstleistungsvertrag",
   "document_analysis": {
-    "document_name": "spielbank_rocketbase_vertrag.json",
-    "document_type": "Technologie-Dienstleistungsvertrag",
-    "analysis_date": "2024-12-19",
-    "sensitive_data_detected": true
-  },
-  "parties": [
-    {
-      "company_name": "Spielbank AG",
-      "address": "Kaiserstra\u00dfe 45, 60329 Frankfurt am Main, Deutschland",
-      "company_registration_numbers": [
-        "HRB 123456"
-      ]
-    },
-    {
-      "company_name": "Rocketbase GmbH",
-      "address": "Schulterblatt 23, 20357 Hamburg, Deutschland",
-      "company_registration_numbers": [
-        "HRB 654321"
-      ]
-    }
-  ],
-  "representative": [
-    {
-      "people_names": "Dr. Hans Meier",
-      "email_addresses": "",
-      "phone_numbers": "",
-      "job_title": "Vorstandsvorsitzender"
-    },
-    {
-      "people_names": "Lisa Schneider",
-      "email_addresses": "",
-      "phone_numbers": "",
-      "job_title": "Gesch\u00e4ftsf\u00fchrerin"
-    }
-  ],
-  "contract_terms": {
-    "initial_term": "24 Monate",
-    "renewal_period": "12 Monate",
-    "auto_renewal": true,
-    "notice_period": "drei (3) Monate",
-    "termination_notice": "drei (3) Monate zum Ablauf der jeweiligen Laufzeit schriftlich",
-    "payment_terms": "monatliche Verg\u00fctung jeweils am Monatsende ohne Abz\u00fcge f\u00e4llig",
-    "payments": "monatliche Verg\u00fctung in H\u00f6he von 10.000 \u20ac",
-    "iban_numbers": [],
-    "credit_card_numbers": [],
-    "account_numbers": [],
-    "currency_amounts": [
-      "10.000 \u20ac",
-      "zehntausend Euro"
+    "title": "Technologie-Dienstleistungsvertrag",
+    "parties": [
+      {
+        "name": "Spielbank AG",
+        "type": "company",
+        "role": "service_recipient"
+      },
+      {
+        "name": "Rocketbase GmbH",
+        "type": "company",
+        "role": "service_provider"
+      }
     ],
-    "number_words": [
-      "zehntausend",
-      "drei"
+    "key_sections": [
+      "Leistungsumfang",
+      "Verg\u00fctung",
+      "Vertraulichkeit",
+      "Datenschutz",
+      "Laufzeit und K\u00fcndigung",
+      "Anwendbares Recht und Gerichtsstand"
+    ]
+  },
+  "sensitive_data": {
+    "personal_names": [
+      {
+        "value": "Dr. Hans Meier",
+        "type": "person_name",
+        "context": "Vorstandsvorsitzender of Spielbank AG",
+        "location": "page_01, page_02"
+      },
+      {
+        "value": "Lisa Schneider",
+        "type": "person_name",
+        "context": "Gesch\u00e4ftsf\u00fchrerin of Rocketbase GmbH",
+        "location": "page_01, page_02"
+      }
     ],
-    "percentages": []
-  },
-  "risk_assessment": {
-    "contains_personal_data": true,
-    "contains_business_sensitive_info": true,
-    "contains_financial_terms": true,
-    "contains_legal_obligations": true
-  },
-  "data_protection_compliance": {
-    "mentioned": true
+    "company_information": [
+      {
+        "value": "Spielbank AG",
+        "type": "company_name",
+        "location": "page_01"
+      },
+      {
+        "value": "Rocketbase GmbH",
+        "type": "company_name",
+        "location": "page_01"
+      }
+    ],
+    "addresses": [
+      {
+        "value": "Kaiserstra\u00dfe 45, 60329 Frankfurt am Main, Deutschland",
+        "type": "business_address",
+        "company": "Spielbank AG",
+        "location": "page_01"
+      },
+      {
+        "value": "Schulterblatt 23, 20357 Hamburg, Deutschland",
+        "type": "business_address",
+        "company": "Rocketbase GmbH",
+        "location": "page_01"
+      }
+    ],
+    "registration_numbers": [
+      {
+        "value": "HRB 123456",
+        "type": "trade_register_number",
+        "company": "Spielbank AG",
+        "location": "page_01"
+      },
+      {
+        "value": "HRB 654321",
+        "type": "trade_register_number",
+        "company": "Rocketbase GmbH",
+        "location": "page_01"
+      }
+    ],
+    "financial_information": [
+      {
+        "value": "10.000 \u20ac",
+        "type": "monthly_compensation",
+        "context": "Monthly payment from Spielbank AG to Rocketbase GmbH",
+        "location": "page_01"
+      }
+    ],
+    "dates": [
+      {
+        "value": "01.09.2025",
+        "type": "contract_start_date",
+        "location": "page_02"
+      },
+      {
+        "value": "24 Monate",
+        "type": "initial_contract_duration",
+        "location": "page_02"
+      },
+      {
+        "value": "12 Monate",
+        "type": "renewal_period",
+        "location": "page_02"
+      },
+      {
+        "value": "3 Monaten",
+        "type": "termination_notice_period",
+        "location": "page_02"
+      }
+    ],
+    "legal_references": [
+      {
+        "value": "Datenschutz-Grundverordnung (DSGVO)",
+        "type": "legal_regulation",
+        "location": "page_02"
+      },
+      {
+        "value": "Bundesrepublik Deutschland",
+        "type": "jurisdiction",
+        "location": "page_02"
+      },
+      {
+        "value": "Frankfurt am Main",
+        "type": "court_jurisdiction",
+        "location": "page_02"
+      }
+    ]
   }
 }
