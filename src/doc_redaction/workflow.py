@@ -22,7 +22,7 @@ from doc_redaction.utils.doc_reader import merge_markdown_strings, pdf_to_png
 from doc_redaction.utils.token_tracker import summarize_token_usage, token_usage
 
 
-def process_and_summarize_tokens(agents: list[Agent], result) -> Any:
+def process_and_summarize_tokens(agents: list[Agent], result: Any) -> str:
     """
     Process token usage for all agents and return a summarized token usage string.
 
@@ -63,13 +63,6 @@ FORMAT: dict[str, str] = {
 def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
     """
     Run the document processing workflow for a given document key.
-
-    Parameters:
-        key (str): The document key to process.
-
-    Returns:
-        dict[str, Any]: Document quality assessment results.
-        Any: Workflow execution result.
     """
     if not isinstance(key, str) or not key:
         raise InvalidDocumentKeyError()
@@ -151,7 +144,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
 
     # Step 5: Summarize token usage
     agents: list[Agent] = [multimodal_agent, detector_agent, redact_agent]
-    token_summary: dict[str, Any] = process_and_summarize_tokens(agents, result)
+    token_summary: str = process_and_summarize_tokens(agents, result)
     TOKEN_SUMMARY_OUT: str = f"{DIR}{PREFIX['token']}{key}{FORMAT['json']}"
     save_as_json(data=token_summary, filename=TOKEN_SUMMARY_OUT)
 
