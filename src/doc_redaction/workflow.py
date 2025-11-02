@@ -55,7 +55,6 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
         name="multimodal_agent",
         system_prompt=CONVERTER_SYSTEM_PROMPT,
         tools=[
-            # file_write,
             image_reader,
             merge_markdown_strings,
             save_file,
