@@ -21,6 +21,28 @@ from doc_redaction.utils.doc_assessment import assess_doc_quality
 from doc_redaction.utils.doc_reader import merge_markdown_strings, pdf_to_png
 from doc_redaction.utils.token_tracker import summarize_token_usage, token_usage
 
+
+def process_and_summarize_tokens(agents: list[Agent], result) -> Any:
+    """
+    Process token usage for all agents and return a summarized token usage string.
+
+    Args:
+        agents: List of Agent objects used in the workflow
+        result: Graph execution result containing accumulated usage data
+
+    Returns:
+        str: JSON string with summarized token usage across all agents
+    """
+    all_agents_tokens: dict[str, dict[str, Any]] = {
+        agent.model.get_config()["model_id"]: token_usage(content=result.results[node_name].accumulated_usage, model=agent.model.get_config()["model_id"])
+        for agent, node_name in [(agents[0], "convert_result"), (agents[1], "detector_result"), (agents[2], "redact_result")]
+    }
+
+    result: str = summarize_token_usage(all_agents_tokens)
+
+    return result
+
+
 DIR: str = "data/"
 PREFIX: dict[str, str] = {
     "confidential": "confidential/",
@@ -39,6 +61,16 @@ FORMAT: dict[str, str] = {
 
 
 def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
+    """
+    Run the document processing workflow for a given document key.
+
+    Parameters:
+        key (str): The document key to process.
+
+    Returns:
+        dict[str, Any]: Document quality assessment results.
+        Any: Workflow execution result.
+    """
     if not isinstance(key, str) or not key:
         raise InvalidDocumentKeyError()
 
@@ -79,10 +111,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
             omit_empty_keys,
         ],
     )
-    detector_agent.model.update_config(
-        model_id=MODEL_IDS["haiku"],
-        max_tokens=64000,
-    )
+    detector_agent.model.update_config(model_id=MODEL_IDS["haiku"])
 
     # Step 3: Redact sensitive information Agent
     REDACT_OUT: str = f"{DIR}{PREFIX['redact']}{key}{FORMAT['md']}"
@@ -92,10 +121,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
         system_prompt=REDACTED_SYSTEM_PROMPT,
         tools=[save_file, redact_sensitive_data],
     )
-    redact_agent.model.update_config(
-        model_id=MODEL_IDS["haiku"],
-        max_tokens=64000,
-    )
+    redact_agent.model.update_config(model_id=MODEL_IDS["haiku"])
 
     # Step 4: Build and run workflow graph
     builder = GraphBuilder()
@@ -124,29 +150,12 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag"):
     logger.info(f"{multimodal_agent.name} token usage: {result.accumulated_usage}")
 
     # Step 5: Summarize token usage
-    all_agents_tokens: dict[str, dict[str, Any]] = {
-        model: token_usage(content=content, model=model)
-        for model, content in [
-            (
-                multimodal_agent.model.get_config()["model_id"],
-                result.results["convert_result"].accumulated_usage,
-            ),
-            (
-                detector_agent.model.get_config()["model_id"],
-                result.results["detector_result"].accumulated_usage,
-            ),
-            (
-                redact_agent.model.get_config()["model_id"],
-                result.results["redact_result"].accumulated_usage,
-            ),
-        ]
-    }
-
-    token_summary: str = summarize_token_usage(all_agents_tokens)
+    agents: list[Agent] = [multimodal_agent, detector_agent, redact_agent]
+    token_summary: dict[str, Any] = process_and_summarize_tokens(agents, result)
     TOKEN_SUMMARY_OUT: str = f"{DIR}{PREFIX['token']}{key}{FORMAT['json']}"
     save_as_json(data=token_summary, filename=TOKEN_SUMMARY_OUT)
 
-    return doc_quality, result
+    return doc_quality, result, token_summary
 
 
 if __name__ == "__main__":

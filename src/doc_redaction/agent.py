@@ -24,7 +24,7 @@ bedrock_model: BedrockModel = BedrockModel(
     temperature=0,
     cache_prompt="default",
     cache_tools="default",
-    max_tokens=65536,
+    max_tokens=64000,
 )
 
 
