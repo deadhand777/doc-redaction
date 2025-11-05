@@ -53,8 +53,8 @@
         "has_images": false,
         "is_image_page": false,
         "fonts_used": [
-          "Cambria",
-          "Calibri-Bold"
+          "Calibri-Bold",
+          "Cambria"
         ]
       },
       {
@@ -74,8 +74,8 @@
         "has_images": false,
         "is_image_page": false,
         "fonts_used": [
-          "Cambria",
-          "Calibri-Bold"
+          "Calibri-Bold",
+          "Cambria"
         ]
       }
     ]

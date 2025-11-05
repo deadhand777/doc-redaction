@@ -23,27 +23,6 @@ from doc_redaction.utils.doc_reader import merge_markdown_strings, pdf_to_png
 from doc_redaction.utils.token_tracker import summarize_token_usage, token_usage
 
 
-def process_and_summarize_tokens(agents: list[Agent], result: Any) -> str:
-    """
-    Process token usage for all agents and return a summarized token usage string.
-
-    Args:
-        agents: List of Agent objects used in the workflow
-        result: Graph execution result containing accumulated usage data
-
-    Returns:
-        str: JSON string with summarized token usage across all agents
-    """
-    all_agents_tokens: dict[str, dict[str, Any]] = {
-        agent.model.get_config()["model_id"]: token_usage(content=result.results[node_name].accumulated_usage, model=agent.model.get_config()["model_id"])
-        for agent, node_name in [(agents[0], "convert_result"), (agents[1], "detector_result"), (agents[2], "redact_result")]
-    }
-
-    result: str = summarize_token_usage(all_agents_tokens)
-
-    return result
-
-
 def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[dict[str, Any], GraphResult, str]:
     """
     Run the document processing workflow for a given document key.
@@ -87,6 +66,7 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[di
             detect_sensitive_data,
             omit_empty_keys,
         ],
+        output_model=SensitiveData,
     )
     detector_agent.model.update_config(model_id=MODEL_IDS["haiku"])
 
@@ -133,6 +113,28 @@ def run_doc_processing_wf(key: str = "spielbank_rocketbase_vertrag") -> tuple[di
     save_as_json(data=token_summary, filename=TOKEN_SUMMARY_OUT)
 
     return doc_quality, result, token_summary
+
+
+def process_and_summarize_tokens(agents: list[Agent], result: Any) -> str:
+    """
+    Process token usage for all agents and return a summarized token usage string.
+
+    Args:
+        agents: List of Agent objects used in the workflow
+        result: Graph execution result containing accumulated usage data
+
+    Returns:
+        str: JSON string with summarized token usage across all agents
+    """
+
+    all_agents_tokens: dict[str, dict[str, Any]] = {
+        agent.model.get_config()["model_id"]: token_usage(content=result.results[node_name].accumulated_usage, model=agent.model.get_config()["model_id"])
+        for agent, node_name in [(agents[0], "convert_result"), (agents[1], "detector_result"), (agents[2], "redact_result")]
+    }
+
+    result: str = summarize_token_usage(all_agents_tokens)
+
+    return result
 
 
 if __name__ == "__main__":

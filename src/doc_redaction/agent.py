@@ -33,6 +33,7 @@ def create_agent(
     name: str | None = "Strands Agent",
     model: BedrockModel | OllamaModel | None = bedrock_model,
     tools: Sequence[str | dict[str, str] | Any] | None = None,
+    output_model: Any | None = None,
 ) -> Agent:
     """
     Create and return a configured Agent.
@@ -41,6 +42,7 @@ def create_agent(
     - name: Optional agent name (default: "Strands Agent").
     - model: Optional model. Falls back to default bedrock_model if None.
     - tools: Optional iterable of tool specs/objects. Converted internally to a list.
+    - output_model: Optional structured output model for the agent.
 
     Raises:
         MissingArgumentError: If system_prompt is missing or empty.
@@ -62,6 +64,7 @@ def create_agent(
         model=model,
         system_prompt=system_prompt.strip(),
         tools=tools_list,
+        structured_output_model=output_model,
     )
 
     if type(model) is BedrockModel:
