@@ -22,7 +22,7 @@ bedrock_model: BedrockModel = BedrockModel(
     region_name=REGION,
     streaming=False,
     temperature=0,
-    cache_prompt="default",
+    cachePoint="default",
     cache_tools="default",
     max_tokens=64000,
 )
