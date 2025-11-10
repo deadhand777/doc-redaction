@@ -1,11 +1,32 @@
-# Document Redaction Automation Service
+<div align="center">
+  <h1>
+    Document Redaction Automation Service
+  </h1>
 
-![!AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
-[![github](https://img.shields.io/badge/GitHub-deadhand777-4078c0?style=for-the-badge&logo=github)](https://github.com/deadand777)
-![!python](https://img.shields.io/badge/python-programming_language-blue?style=for-the-badge&logo=python&logoColor=white)
-![Static Badge](https://img.shields.io/badge/python-3.10_3.11_3.12_3.13-blue?style=for-the-badge&logoColor=blue&labelColor=grey)
-![Linter: Ruff](https://img.shields.io/badge/Linter-Ruff-brightgreen?style=for-the-badge&logoColor=blue&labelColor=grey)
-![Docs: MkDocs](https://img.shields.io/badge/MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)
+  <h2>
+    The purpose of this project is to provide a service that automatically detects and redacts confidential information from documents.
+  </h2>
+
+  <p>
+    <img src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS">
+    <a href="https://github.com/drklein-rk/tracer-doc-processing-demo">
+      <img src="https://img.shields.io/badge/GitHub-drklein--rk-4078c0?style=for-the-badge&logo=github" alt="GitHub">
+    </a>
+    <img src="https://img.shields.io/badge/python-programming_language-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/python-3.10_3.11_3.12_3.13-blue?style=for-the-badge&logoColor=blue&labelColor=grey" alt="Python versions">
+    <img src="https://img.shields.io/badge/Linter-Ruff-brightgreen?style=for-the-badge&logoColor=blue&labelColor=grey" alt="Linter: Ruff">
+    <img src="https://img.shields.io/badge/MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white" alt="Docs: MkDocs">
+  </p>
+
+  <p>
+    <a href="https://github.com/deadhand777/doc-redaction">Repository</a>
+    ◆ <a href="https://deadhand777.github.io/doc-redaction/">Documentation</a>
+    ◆ <a href="https://github.com/deadhand777/doc-redaction/discussions">Discussions</a>
+  </p>
+</div>
 
 
 ## Project Structure
