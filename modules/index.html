@@ -1,0 +1,3968 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is a Document Redaction Automation project.">
+      
+      
+        <meta name="author" content="Chris Schulz">
+      
+      
+        <link rel="canonical" href="https://deadhand777.github.io/doc-redaction/modules/">
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Modules - doc-redaction</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agent-modules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="doc-redaction" class="md-header__button md-logo" aria-label="doc-redaction" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            doc-redaction
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/deadhand777/doc-redaction" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deadhand777/doc-redaction
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="doc-redaction" class="md-nav__button md-logo" aria-label="doc-redaction" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    doc-redaction
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/deadhand777/doc-redaction" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deadhand777/doc-redaction
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agent-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_agent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent.create_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agentic-workflow-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agentic Workflow Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agentic Workflow Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run_doc_processing_wf" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_doc_processing_wf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow.run_doc_processing_wf" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_doc_processing_wf
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="run_doc_processing_wf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process_and_summarize_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_and_summarize_tokens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow.process_and_summarize_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_and_summarize_tokens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensitivedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      SensitiveData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output.SensitiveData" class="md-nav__link">
+    <span class="md-ellipsis">
+      SensitiveData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      detect_sensitive_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.detect_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      detect_sensitive_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.detect_sensitive_data.detect_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      detect_sensitive_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.detect_sensitive_data.remove_markdown_formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_markdown_formatting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="remove_markdown_formatting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redact_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_sensitive_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_sensitive_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.apply_redactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_redactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.extract_custom_terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_custom_terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.redact_pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.redact_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_sensitive_data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="redact_sensitive_data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Storage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.store_data.save_as_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_as_json
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="save_as_json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.tool_utils.save_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.tool_utils.remove_temp_files" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_temp_files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.tool_utils.omit_empty_keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      omit_empty_keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#this-section-includes-common-utility-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      This section includes common utility functions.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="This section includes common utility functions.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save_as_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_as_json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.save_as_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_as_json
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="save_as_json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_pdf_page_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pdf_page_count
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.get_pdf_page_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pdf_page_count
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_pdf_page_count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_file_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_file_size
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.get_file_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_file_size
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_file_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalidcontenttype" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidContentType
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.InvalidContentType" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidContentType
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InvalidContentType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invaliddocumentkeyerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidDocumentKeyError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.InvalidDocumentKeyError" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidDocumentKeyError
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InvalidDocumentKeyError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missingargumenterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      MissingArgumentError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.MissingArgumentError" class="md-nav__link">
+    <span class="md-ellipsis">
+      MissingArgumentError
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MissingArgumentError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdfprocessingerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDFProcessingError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.PDFProcessingError" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDFProcessingError
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agent-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agent Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_agent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent.create_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agentic-workflow-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agentic Workflow Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agentic Workflow Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run_doc_processing_wf" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_doc_processing_wf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow.run_doc_processing_wf" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_doc_processing_wf
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="run_doc_processing_wf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process_and_summarize_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_and_summarize_tokens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow.process_and_summarize_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_and_summarize_tokens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensitivedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      SensitiveData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output.SensitiveData" class="md-nav__link">
+    <span class="md-ellipsis">
+      SensitiveData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      detect_sensitive_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.detect_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      detect_sensitive_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.detect_sensitive_data.detect_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      detect_sensitive_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.detect_sensitive_data.remove_markdown_formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_markdown_formatting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="remove_markdown_formatting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redact_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_sensitive_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_sensitive_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.apply_redactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      apply_redactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.extract_custom_terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_custom_terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.redact_pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.redact_sensitive_data.redact_sensitive_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      redact_sensitive_data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="redact_sensitive_data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Storage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.store_data.save_as_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_as_json
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="save_as_json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.tool_utils.save_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.tool_utils.remove_temp_files" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_temp_files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool.tool_utils.omit_empty_keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      omit_empty_keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#this-section-includes-common-utility-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      This section includes common utility functions.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="This section includes common utility functions.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save_as_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_as_json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.save_as_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_as_json
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="save_as_json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_pdf_page_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pdf_page_count
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.get_pdf_page_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_pdf_page_count
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_pdf_page_count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_file_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_file_size
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.get_file_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_file_size
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_file_size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalidcontenttype" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidContentType
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.InvalidContentType" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidContentType
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InvalidContentType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invaliddocumentkeyerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidDocumentKeyError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.InvalidDocumentKeyError" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidDocumentKeyError
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InvalidDocumentKeyError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missingargumenterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      MissingArgumentError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.MissingArgumentError" class="md-nav__link">
+    <span class="md-ellipsis">
+      MissingArgumentError
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MissingArgumentError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdfprocessingerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDFProcessingError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils.commons.PDFProcessingError" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDFProcessingError
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Modules</h1>
+
+<h2 id="agent-modules">Agent Modules<a class="headerlink" href="#agent-modules" title="Permanent link">&para;</a></h2>
+<h3 id="create_agent">create_agent<a class="headerlink" href="#create_agent" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="agent.create_agent"></a>
+    <div class="doc doc-contents first">
+
+        <p>Create and return a configured Agent.</p>
+<ul>
+<li>system_prompt: Required non-empty instructional prompt.</li>
+<li>name: Optional agent name (default: "Strands Agent").</li>
+<li>model: Optional model. Falls back to default bedrock_model if None.</li>
+<li>tools: Optional iterable of tool specs/objects. Converted internally to a list.</li>
+<li>output_model: Optional structured output model for the agent.</li>
+</ul>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="doc_redaction.utils.commons.MissingArgumentError">MissingArgumentError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If system_prompt is missing or empty.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="TypeError">TypeError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If system_prompt is not a string.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/agent.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_agent</span><span class="p">(</span>
+    <span class="n">system_prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="s2">&quot;Strands Agent&quot;</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">:</span> <span class="n">BedrockModel</span> <span class="o">|</span> <span class="n">OllamaModel</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">bedrock_model</span><span class="p">,</span>
+    <span class="n">tools</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_model</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Agent</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create and return a configured Agent.</span>
+
+<span class="sd">    - system_prompt: Required non-empty instructional prompt.</span>
+<span class="sd">    - name: Optional agent name (default: &quot;Strands Agent&quot;).</span>
+<span class="sd">    - model: Optional model. Falls back to default bedrock_model if None.</span>
+<span class="sd">    - tools: Optional iterable of tool specs/objects. Converted internally to a list.</span>
+<span class="sd">    - output_model: Optional structured output model for the agent.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        MissingArgumentError: If system_prompt is missing or empty.</span>
+<span class="sd">        TypeError: If system_prompt is not a string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">system_prompt</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">ParameterTypeError</span><span class="p">(</span><span class="s2">&quot;system_prompt&quot;</span><span class="p">,</span> <span class="s2">&quot;a string&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">system_prompt</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">MissingArgumentError</span><span class="p">(</span><span class="s2">&quot;system_prompt&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Fallback to default model if none provided</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">bedrock_model</span>
+
+    <span class="c1"># Normalize tools to a list (avoid mutable default pitfalls)</span>
+    <span class="n">tools_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tools</span><span class="p">)</span> <span class="k">if</span> <span class="n">tools</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="n">agent</span><span class="p">:</span> <span class="n">Agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">system_prompt</span><span class="o">=</span><span class="n">system_prompt</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+        <span class="n">tools</span><span class="o">=</span><span class="n">tools_list</span><span class="p">,</span>
+        <span class="n">structured_output_model</span><span class="o">=</span><span class="n">output_model</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">model</span><span class="p">)</span> <span class="ow">is</span> <span class="n">BedrockModel</span><span class="p">:</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="s2">&quot;Agent created successfully&quot;</span><span class="p">,</span>
+        <span class="n">extra</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;agent_name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;model_id&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;tools_count&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">tools_list</span><span class="p">)</span> <span class="k">if</span> <span class="n">tools_list</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">agent</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h3 id="agentic-workflow-modules">Agentic Workflow Modules<a class="headerlink" href="#agentic-workflow-modules" title="Permanent link">&para;</a></h3>
+<h4 id="run_doc_processing_wf">run_doc_processing_wf<a class="headerlink" href="#run_doc_processing_wf" title="Permanent link">&para;</a></h4>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="workflow.run_doc_processing_wf"></a>
+    <div class="doc doc-contents first">
+
+        <p>Run the document processing workflow for a given document key.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/workflow.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_doc_processing_wf</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;spielbank_rocketbase_vertrag&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">GraphResult</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run the document processing workflow for a given document key.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">key</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InvalidDocumentKeyError</span><span class="p">()</span>
+
+    <span class="c1"># Step 0: Assess document quality</span>
+    <span class="n">DOC_QUALITY_IN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">CONTRACT</span><span class="si">}{</span><span class="n">key</span><span class="si">}{</span><span class="n">Format</span><span class="o">.</span><span class="n">PDF</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">DOC_QUALITY_OUT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">QUALITY</span><span class="si">}{</span><span class="n">key</span><span class="si">}{</span><span class="n">Format</span><span class="o">.</span><span class="n">JSON</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">doc_quality</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">assess_doc_quality</span><span class="p">(</span>
+        <span class="n">file_path</span><span class="o">=</span><span class="n">DOC_QUALITY_IN</span><span class="p">,</span>
+        <span class="n">output_path</span><span class="o">=</span><span class="n">DOC_QUALITY_OUT</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Step 1: Convert input contract from PDF to markdwon format using vision model Agent</span>
+    <span class="n">multimodal_agent</span><span class="p">:</span> <span class="n">Agent</span> <span class="o">=</span> <span class="n">create_agent</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;multimodal_agent&quot;</span><span class="p">,</span>
+        <span class="n">system_prompt</span><span class="o">=</span><span class="n">CONVERTER_SYSTEM_PROMPT</span><span class="p">,</span>
+        <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">image_reader</span><span class="p">,</span>
+            <span class="n">merge_markdown_strings</span><span class="p">,</span>
+            <span class="n">save_file</span><span class="p">,</span>
+            <span class="n">remove_temp_files</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">CONVERT_IN</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">pdf_to_png</span><span class="p">(</span>
+        <span class="n">pdf_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">CONTRACT</span><span class="si">}{</span><span class="n">key</span><span class="si">}{</span><span class="n">Format</span><span class="o">.</span><span class="n">PDF</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">TEMP</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">CONVERT_OUT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">MARKDOWN</span><span class="si">}{</span><span class="n">key</span><span class="si">}{</span><span class="n">Format</span><span class="o">.</span><span class="n">MD</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Step 2: Detect sensitve information Agent</span>
+    <span class="n">DETECT_OUT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">CONFIDENTIAL</span><span class="si">}{</span><span class="n">key</span><span class="si">}{</span><span class="n">Format</span><span class="o">.</span><span class="n">JSON</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">detector_agent</span><span class="p">:</span> <span class="n">Agent</span> <span class="o">=</span> <span class="n">create_agent</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;detector_agent&quot;</span><span class="p">,</span>
+        <span class="n">system_prompt</span><span class="o">=</span><span class="n">DETECTION_SYSTEM_PROMPT</span><span class="p">,</span>
+        <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">current_time</span><span class="p">,</span>
+            <span class="n">detect_sensitive_data</span><span class="p">,</span>
+            <span class="n">omit_empty_keys</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">output_model</span><span class="o">=</span><span class="n">SensitiveData</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">detector_agent</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update_config</span><span class="p">(</span><span class="n">model_id</span><span class="o">=</span><span class="n">MODEL_IDS</span><span class="p">[</span><span class="s2">&quot;haiku&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Step 3: Redact sensitive information Agent</span>
+    <span class="n">REDACT_OUT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">REDACT</span><span class="si">}{</span><span class="n">key</span><span class="si">}{</span><span class="n">Format</span><span class="o">.</span><span class="n">MD</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">redact_agent</span><span class="p">:</span> <span class="n">Agent</span> <span class="o">=</span> <span class="n">create_agent</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;redact_agent&quot;</span><span class="p">,</span>
+        <span class="n">system_prompt</span><span class="o">=</span><span class="n">REDACTED_SYSTEM_PROMPT</span><span class="p">,</span>
+        <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">save_file</span><span class="p">,</span> <span class="n">redact_sensitive_data</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">redact_agent</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update_config</span><span class="p">(</span><span class="n">model_id</span><span class="o">=</span><span class="n">MODEL_IDS</span><span class="p">[</span><span class="s2">&quot;haiku&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Step 4: Build and run workflow graph</span>
+    <span class="n">builder</span><span class="p">:</span> <span class="n">GraphBuilder</span> <span class="o">=</span> <span class="n">GraphBuilder</span><span class="p">()</span>
+
+    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">multimodal_agent</span><span class="p">,</span> <span class="s2">&quot;convert_result&quot;</span><span class="p">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">detector_agent</span><span class="p">,</span> <span class="s2">&quot;detector_result&quot;</span><span class="p">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">redact_agent</span><span class="p">,</span> <span class="s2">&quot;redact_result&quot;</span><span class="p">)</span>
+
+    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;convert_result&quot;</span><span class="p">,</span> <span class="s2">&quot;detector_result&quot;</span><span class="p">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;convert_result&quot;</span><span class="p">,</span> <span class="s2">&quot;redact_result&quot;</span><span class="p">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;detector_result&quot;</span><span class="p">,</span> <span class="s2">&quot;redact_result&quot;</span><span class="p">)</span>
+
+    <span class="n">builder</span><span class="o">.</span><span class="n">set_entry_point</span><span class="p">(</span><span class="s2">&quot;convert_result&quot;</span><span class="p">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">set_execution_timeout</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">graph</span><span class="p">:</span> <span class="n">Graph</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+    <span class="n">user_prompt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    1. Convert the following list of images to a single markdown: </span><span class="si">{</span><span class="n">CONVERT_IN</span><span class="si">}</span><span class="s2">. Save the result to </span><span class="si">{</span><span class="n">CONVERT_OUT</span><span class="si">}</span><span class="s2">.</span>
+<span class="s2">    2. Detect sensitive data. Return the results as structured_output as defined in </span><span class="si">{</span><span class="n">SensitiveData</span><span class="si">}</span><span class="s2"> schema. Save the result to </span><span class="si">{</span><span class="n">DETECT_OUT</span><span class="si">}</span><span class="s2">.</span>
+<span class="s2">    3. Redact all information provided in detector_result except for the document_analysis field. Save the result to </span><span class="si">{</span><span class="n">REDACT_OUT</span><span class="si">}</span><span class="s2">.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">result</span><span class="p">:</span> <span class="n">GraphResult</span> <span class="o">=</span> <span class="n">graph</span><span class="p">(</span><span class="n">user_prompt</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Workflow status: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total token usage: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">accumulated_usage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 5: Summarize token usage</span>
+    <span class="n">agents</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Agent</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">multimodal_agent</span><span class="p">,</span> <span class="n">detector_agent</span><span class="p">,</span> <span class="n">redact_agent</span><span class="p">]</span>
+    <span class="n">token_summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">process_and_summarize_tokens</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="n">TOKEN_SUMMARY_OUT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Dir</span><span class="o">.</span><span class="n">Data</span><span class="si">}{</span><span class="n">Prefix</span><span class="o">.</span><span class="n">TOKEN</span><span class="si">}{</span><span class="n">key</span><span class="si">}{</span><span class="n">Format</span><span class="o">.</span><span class="n">JSON</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">save_as_json</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">token_summary</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">TOKEN_SUMMARY_OUT</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">doc_quality</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">token_summary</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h4 id="process_and_summarize_tokens">process_and_summarize_tokens<a class="headerlink" href="#process_and_summarize_tokens" title="Permanent link">&para;</a></h4>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="workflow.process_and_summarize_tokens"></a>
+    <div class="doc doc-contents first">
+
+        <p>Process token usage for all agents and return a summarized token usage string.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>agents</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="strands.Agent">Agent</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of Agent objects used in the workflow</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>result</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Graph execution result containing accumulated usage data</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>str</code></td>            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>JSON string with summarized token usage across all agents</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/workflow.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">process_and_summarize_tokens</span><span class="p">(</span><span class="n">agents</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Agent</span><span class="p">],</span> <span class="n">result</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Process token usage for all agents and return a summarized token usage string.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        agents: List of Agent objects used in the workflow</span>
+<span class="sd">        result: Graph execution result containing accumulated usage data</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: JSON string with summarized token usage across all agents</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">all_agents_tokens</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">get_config</span><span class="p">()[</span><span class="s2">&quot;model_id&quot;</span><span class="p">]:</span> <span class="n">token_usage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="n">node_name</span><span class="p">]</span><span class="o">.</span><span class="n">accumulated_usage</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">agent</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">get_config</span><span class="p">()[</span><span class="s2">&quot;model_id&quot;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">agent</span><span class="p">,</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;convert_result&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;detector_result&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">agents</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;redact_result&quot;</span><span class="p">)]</span>
+    <span class="p">}</span>
+
+    <span class="n">result</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">summarize_token_usage</span><span class="p">(</span><span class="n">all_agents_tokens</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="output-modules">Output Modules<a class="headerlink" href="#output-modules" title="Permanent link">&para;</a></h2>
+<h3 id="sensitivedata">SensitiveData<a class="headerlink" href="#sensitivedata" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="output.SensitiveData"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+        <p>Represents sensitive data detected in a document.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/doc_redaction/output.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">SensitiveData</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents sensitive data detected in a document.&quot;&quot;&quot;</span>
+
+    <span class="n">document_analysis</span><span class="p">:</span> <span class="n">DocumentAnalysis</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Metadata about the analyzed document.&quot;</span><span class="p">)</span>
+    <span class="n">parties</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Party</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Information about the parties involved in the contract.&quot;</span><span class="p">)</span>
+    <span class="n">representative</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Representative</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Information about the representatives of the parties.&quot;</span><span class="p">)</span>
+    <span class="n">contract_terms</span><span class="p">:</span> <span class="n">ContractTerms</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Key terms and conditions of the contract.&quot;</span><span class="p">)</span>
+    <span class="n">risk_assessment</span><span class="p">:</span> <span class="n">RiskAssessment</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Risk assessment of the contract.&quot;</span><span class="p">)</span>
+    <span class="n">data_protection_compliance</span><span class="p">:</span> <span class="n">DataProtectionCompliance</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Data protection compliance details.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="tool-modules">Tool Modules<a class="headerlink" href="#tool-modules" title="Permanent link">&para;</a></h2>
+<h3 id="detect_sensitive_data">detect_sensitive_data<a class="headerlink" href="#detect_sensitive_data" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="tool.detect_sensitive_data"></a>
+    <div class="doc doc-contents first">
+
+        <p>Tool for detecting sensitive data in markdown documents.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tool.detect_sensitive_data.detect_sensitive_data" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">detect_sensitive_data</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span></code>
+
+<a href="#tool.detect_sensitive_data.detect_sensitive_data" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Detects and extracts sensitive information from markdown documents.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/detect_sensitive_data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">detect_sensitive_data</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Detects and extracts sensitive information from markdown documents.&quot;&quot;&quot;</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="n">remove_markdown_formatting</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Mapping of result key -&gt; regex list or single regex</span>
+    <span class="n">pattern_mapping</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;email_addresses&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">EMAIL_RE</span><span class="p">],</span>
+        <span class="s2">&quot;phone_numbers&quot;</span><span class="p">:</span> <span class="n">PHONE_REGEXES</span><span class="p">,</span>
+        <span class="s2">&quot;credit_card_numbers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">CC_RE</span><span class="p">],</span>
+        <span class="s2">&quot;iban_numbers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">IBAN_RE</span><span class="p">],</span>
+        <span class="s2">&quot;account_numbers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">ACCOUNT_RE</span><span class="p">],</span>
+        <span class="s2">&quot;addresses&quot;</span><span class="p">:</span> <span class="n">ADDRESS_REGEXES</span><span class="p">,</span>
+        <span class="s2">&quot;people_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">NAME_RE</span><span class="p">],</span>
+        <span class="s2">&quot;currency_amounts&quot;</span><span class="p">:</span> <span class="n">CURRENCY_REGEXES</span><span class="p">,</span>
+        <span class="s2">&quot;percentages&quot;</span><span class="p">:</span> <span class="n">PERCENTAGE_REGEXES</span><span class="p">,</span>
+        <span class="s2">&quot;numbers&quot;</span><span class="p">:</span> <span class="n">NUMBER_REGEXES</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">regexes</span> <span class="ow">in</span> <span class="n">pattern_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">regex</span> <span class="ow">in</span> <span class="n">regexes</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+                <span class="c1"># Additional filters for some types</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;phone_numbers&quot;</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^\d]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">match</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;credit_card_numbers&quot;</span><span class="p">:</span>
+                    <span class="n">digits</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^\d]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">match</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">13</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">19</span><span class="p">):</span>
+                        <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;people_names&quot;</span> <span class="ow">and</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">COMMON_NON_NAMES</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">matches</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">matches</span><span class="p">:</span>
+            <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
+
+    <span class="c1"># Add German &amp; English number words</span>
+    <span class="n">numbers_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numbers&quot;</span><span class="p">,</span> <span class="p">[]))</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="n">clean_word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;.,;:!?&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">clean_word</span> <span class="ow">in</span> <span class="n">GERMAN_NUMBER_WORDS</span> <span class="ow">or</span> <span class="n">clean_word</span> <span class="ow">in</span> <span class="n">ENGLISH_NUMBER_WORDS</span><span class="p">:</span>
+            <span class="n">numbers_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">clean_word</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">numbers_set</span><span class="p">:</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">numbers_set</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tool.detect_sensitive_data.remove_markdown_formatting" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">remove_markdown_formatting</span><span class="p">(</span><span class="n">markdown_text</span><span class="p">)</span></code>
+
+<a href="#tool.detect_sensitive_data.remove_markdown_formatting" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Remove markdown formatting for cleaner analysis.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/detect_sensitive_data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">remove_markdown_formatting</span><span class="p">(</span><span class="n">markdown_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove markdown formatting for cleaner analysis.&quot;&quot;&quot;</span>
+    <span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^#{1,6}\s+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>  <span class="c1"># headers</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\*\*(.+?)\*\*&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1&quot;</span><span class="p">),</span>  <span class="c1"># bold</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\*(.+?)\*&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1&quot;</span><span class="p">),</span>  <span class="c1"># italic</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;__(.+?)__&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1&quot;</span><span class="p">),</span>  <span class="c1"># underline</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;_(.+?)_&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;`(.+?)`&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1&quot;</span><span class="p">),</span>  <span class="c1"># inline code</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;```.*?```&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">),</span>  <span class="c1"># code blocks</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\[(.+?)\]\(.+?\)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1&quot;</span><span class="p">),</span>  <span class="c1"># links</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;!\[.*?\]\(.+?\)&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>  <span class="c1"># images</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^---+$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">),</span>  <span class="c1"># hr</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\s*[-*+]\s+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">),</span>  <span class="c1"># unordered lists</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\s*\d+\.\s+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">),</span>  <span class="c1"># ordered lists</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^&gt;\s+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">),</span>  <span class="c1"># blockquotes</span>
+    <span class="p">]</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">markdown_text</span>
+
+    <span class="k">for</span> <span class="n">pat</span> <span class="ow">in</span> <span class="n">patterns</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># if len(pat) == 2 else re.sub(pat[0], pat[1], text)  # flags=pat[2]</span>
+        <span class="p">)</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\n\s*\n&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># normalize spacing</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[ \t]+&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="redact_sensitive_data">redact_sensitive_data<a class="headerlink" href="#redact_sensitive_data" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="tool.redact_sensitive_data"></a>
+    <div class="doc doc-contents first">
+
+        <p>Tool for redacting sensitive information from markdown documents.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tool.redact_sensitive_data.apply_redactions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">apply_redactions</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">rules</span><span class="p">,</span> <span class="n">redaction_symbol</span><span class="p">,</span> <span class="n">preserve_structure</span><span class="p">)</span></code>
+
+<a href="#tool.redact_sensitive_data.apply_redactions" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Apply redaction rules to the content based on user specifications.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/redact_sensitive_data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">apply_redactions</span><span class="p">(</span><span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">rules</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">redaction_symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">preserve_structure</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply redaction rules to the content based on user specifications.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rules_lower</span> <span class="o">=</span> <span class="n">rules</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Common patterns</span>
+    <span class="n">patterns</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;e-mail&quot;</span><span class="p">,</span> <span class="s2">&quot;@&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;telephone&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;number&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;(\+?1[-.\s]?)?\(?([0-9]</span><span class="si">{3}</span><span class="s2">)\)?[-.\s]?([0-9]</span><span class="si">{3}</span><span class="s2">)[-.\s]?([0-9]</span><span class="si">{4}</span><span class="s2">)&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;ssn&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;ssn&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;social security&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;social&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\b\d</span><span class="si">{3}</span><span class="s2">-?\d</span><span class="si">{2}</span><span class="s2">-?\d</span><span class="si">{4}</span><span class="s2">\b&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;credit_card&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;credit card&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;card number&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;credit&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\b(?:\d</span><span class="si">{4}</span><span class="s2">[-\s]?)</span><span class="si">{3}</span><span class="s2">\d</span><span class="si">{4}</span><span class="s2">\b&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;zip_code&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;zip code&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;postal code&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;zip&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\b\d</span><span class="si">{5}</span><span class="s2">(?:-\d</span><span class="si">{4}</span><span class="s2">)?\b&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;ip_address&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;ip address&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;ip&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\b(?:[0-9]{1,3}\.)</span><span class="si">{3}</span><span class="s2">[0-9]{1,3}\b&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;link&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;website&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s1">&#39;https?://[^\s&lt;&gt;&quot;</span><span class="si">{}</span><span class="s1">|</span><span class="se">\\</span><span class="s1">^`\[\]]+&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;birthday&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;birth&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b|\b\d</span><span class="si">{4}</span><span class="s2">[/-]\d{1,2}[/-]\d{1,2}\b&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;individual&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\b[A-Z][a-z]+ [A-Z][a-z]+\b&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;address&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;street&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;location&quot;</span><span class="p">],</span>
+            <span class="sa">r</span><span class="s2">&quot;\d+\s+[A-Za-z\s]+(?:Street|St|Avenue|Ave|Road|Rd|Drive|Dr|Lane|Ln|Boulevard|Blvd)&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">should_apply</span><span class="p">(</span><span class="n">keywords</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">term</span> <span class="ow">in</span> <span class="n">rules_lower</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">)</span>
+
+    <span class="n">redacted_content</span> <span class="o">=</span> <span class="n">content</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span> <span class="ow">in</span> <span class="n">patterns</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">should_apply</span><span class="p">(</span><span class="n">keywords</span><span class="p">):</span>
+            <span class="n">redacted_content</span> <span class="o">=</span> <span class="n">redact_pattern</span><span class="p">(</span><span class="n">redacted_content</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">redaction_symbol</span><span class="p">,</span> <span class="n">preserve_structure</span><span class="p">)</span>
+
+    <span class="c1"># Handle custom terms</span>
+    <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">extract_custom_terms</span><span class="p">(</span><span class="n">rules</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">term</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">term</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+            <span class="n">redacted_content</span> <span class="o">=</span> <span class="n">redact_pattern</span><span class="p">(</span><span class="n">redacted_content</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">redaction_symbol</span><span class="p">,</span> <span class="n">preserve_structure</span><span class="p">,</span> <span class="n">case_insensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">redacted_content</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tool.redact_sensitive_data.extract_custom_terms" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">extract_custom_terms</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span></code>
+
+<a href="#tool.redact_sensitive_data.extract_custom_terms" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Extract potential custom terms to redact from the rules text.
+This is a simple approach - could be enhanced with NLP.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/redact_sensitive_data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">extract_custom_terms</span><span class="p">(</span><span class="n">rules</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract potential custom terms to redact from the rules text.</span>
+<span class="sd">    This is a simple approach - could be enhanced with NLP.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Look for quoted terms or terms after &quot;redact&quot;</span>
+    <span class="n">custom_terms</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Extract quoted terms</span>
+    <span class="n">quoted_terms</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[&#39;</span><span class="se">\&quot;</span><span class="s2">]([^&#39;</span><span class="se">\&quot;</span><span class="s2">]+)[&#39;</span><span class="se">\&quot;</span><span class="s2">]&quot;</span><span class="p">,</span> <span class="n">rules</span><span class="p">)</span>
+    <span class="n">custom_terms</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">quoted_terms</span><span class="p">)</span>
+
+    <span class="c1"># Extract terms after &quot;redact&quot; or &quot;remove&quot;</span>
+    <span class="n">redact_terms</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(?:redact|remove|hide)\s+(?:all\s+)?([a-zA-Z\s]+?)(?:\s+(?:and|or|from)|$)&quot;</span><span class="p">,</span> <span class="n">rules</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">redact_terms</span><span class="p">:</span>
+        <span class="n">term</span> <span class="o">=</span> <span class="n">term</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">term</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">common</span> <span class="ow">in</span> <span class="n">term</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">common</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;ssn&quot;</span><span class="p">,</span> <span class="s2">&quot;credit&quot;</span><span class="p">,</span> <span class="s2">&quot;card&quot;</span><span class="p">]):</span>
+            <span class="n">custom_terms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">custom_terms</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tool.redact_sensitive_data.redact_pattern" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">redact_pattern</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">redaction_symbol</span><span class="p">,</span> <span class="n">preserve_structure</span><span class="p">,</span> <span class="n">case_insensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+<a href="#tool.redact_sensitive_data.redact_pattern" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Redact matches of a specific pattern in the content.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/redact_sensitive_data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">redact_pattern</span><span class="p">(</span><span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">redaction_symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">preserve_structure</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">case_insensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Redact matches of a specific pattern in the content.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">flags</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span> <span class="k">if</span> <span class="n">case_insensitive</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">replace_match</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+        <span class="n">matched_text</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">preserve_structure</span><span class="p">:</span>
+            <span class="c1"># Replace each character with a redaction character, preserving spaces and structure</span>
+            <span class="n">redaction_char</span> <span class="o">=</span> <span class="s2">&quot;█&quot;</span>
+            <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\S&quot;</span><span class="p">,</span> <span class="n">redaction_char</span><span class="p">,</span> <span class="n">matched_text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">redaction_symbol</span>
+
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replace_match</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tool.redact_sensitive_data.redact_sensitive_data" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">redact_sensitive_data</span><span class="p">(</span><span class="n">tool</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#tool.redact_sensitive_data.redact_sensitive_data" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Redact sensitive information from markdown documents based on user specifications.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>tool</code>
+            </td>
+            <td>
+                  <code><span title="strands.types.tools.ToolUse">ToolUse</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The tool use object containing tool execution details</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional arguments passed to the tool</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>ToolResult</code></td>            <td>
+                  <code><span title="strands.types.tools.ToolResult">ToolResult</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The redacted markdown document</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/redact_sensitive_data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">redact_sensitive_data</span><span class="p">(</span><span class="n">tool</span><span class="p">:</span> <span class="n">ToolUse</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ToolResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Redact sensitive information from markdown documents based on user specifications.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tool: The tool use object containing tool execution details</span>
+<span class="sd">        **kwargs: Additional arguments passed to the tool</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ToolResult: The redacted markdown document</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Extract parameters</span>
+        <span class="n">markdown_content</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;markdown_content&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">redaction_rules</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;redaction_rules&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">redaction_symbol</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;redaction_symbol&quot;</span><span class="p">,</span> <span class="s2">&quot;[REDACTED]&quot;</span><span class="p">)</span>
+        <span class="n">preserve_structure</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;preserve_structure&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">markdown_content</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;toolUseId&quot;</span><span class="p">:</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;toolUseId&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Error: No markdown content provided&quot;</span><span class="p">}],</span>
+            <span class="p">}</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">redaction_rules</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;toolUseId&quot;</span><span class="p">:</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;toolUseId&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Error: No redaction rules specified&quot;</span><span class="p">}],</span>
+            <span class="p">}</span>
+
+        <span class="c1"># Parse redaction rules and apply redactions</span>
+        <span class="n">redacted_content</span> <span class="o">=</span> <span class="n">apply_redactions</span><span class="p">(</span><span class="n">markdown_content</span><span class="p">,</span> <span class="n">redaction_rules</span><span class="p">,</span> <span class="n">redaction_symbol</span><span class="p">,</span> <span class="n">preserve_structure</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;toolUseId&quot;</span><span class="p">:</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;toolUseId&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Successfully redacted sensitive information based on rules: &#39;</span><span class="si">{</span><span class="n">redaction_rules</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n\n</span><span class="s2">Redacted markdown document:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">redacted_content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}],</span>
+        <span class="p">}</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;toolUseId&quot;</span><span class="p">:</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;toolUseId&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Error processing redaction: </span><span class="si">{</span><span class="n">e</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">}],</span>
+        <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="data-storage">Data Storage<a class="headerlink" href="#data-storage" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="tool.store_data.save_as_json"></a>
+    <div class="doc doc-contents first">
+
+        <p>Write a JSON-formatted string to a file and log the operation.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>JSON string content to write.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Destination file path. Existing content will be overwritten.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file cannot be opened or written.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="logs" open>
+  <summary>Logs</summary>
+  <p>INFO: On successful save with the target file path.</p>
+</details>
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>save_as_json(res, "data/confidential/rocketbase_aws_agreement_sensitive_structures_v4.json")</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/store_data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a JSON-formatted string to a file and log the operation.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        data: JSON string content to write.</span>
+<span class="sd">        filename: Destination file path. Existing content will be overwritten.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        OSError: If the file cannot be opened or written.</span>
+
+<span class="sd">    Logs:</span>
+<span class="sd">        INFO: On successful save with the target file path.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        save_as_json(res, &quot;data/confidential/rocketbase_aws_agreement_sensitive_structures_v4.json&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved structured output to </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h3 id="other-tools">Other Tools<a class="headerlink" href="#other-tools" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="tool.tool_utils.save_file"></a>
+    <div class="doc doc-contents first">
+
+        <p>Write a formatted string to a file and log the operation.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>String content to write.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Destination file path. Existing content will be overwritten.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file cannot be opened or written.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="logs" open>
+  <summary>Logs</summary>
+  <p>INFO: On successful save with the target file path.</p>
+</details>
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>save_file(res, "data/confidential/rocketbase_aws_agreement_sensitive_structures.json")</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/tool_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_file</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a formatted string to a file and log the operation.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        data: String content to write.</span>
+<span class="sd">        filename: Destination file path. Existing content will be overwritten.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        OSError: If the file cannot be opened or written.</span>
+
+<span class="sd">    Logs:</span>
+<span class="sd">        INFO: On successful save with the target file path.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        save_file(res, &quot;data/confidential/rocketbase_aws_agreement_sensitive_structures.json&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved structured output to </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="tool.tool_utils.remove_temp_files"></a>
+    <div class="doc doc-contents first">
+
+        <p>Remove temporary files in the specified directory.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Directory path to remove.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;data/temp/&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/tool_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_temp_files</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;data/temp/&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove temporary files in the specified directory.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        path: Directory path to remove.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removed temporary files in directory: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="tool.tool_utils.omit_empty_keys"></a>
+    <div class="doc doc-contents first">
+
+        <p>Parse a JSON object string and return only the items with non-empty values.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>s</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A JSON-encoded object mapping string keys to lists of strings.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="list">list</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dict[str, list[str]] containing only entries whose values are truthy (e.g., non-empty lists).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="json.JSONDecodeError">JSONDecodeError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the input is not valid JSON.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/tool/tool_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">omit_empty_keys</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse a JSON object string and return only the items with non-empty values.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        s: A JSON-encoded object mapping string keys to lists of strings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A dict[str, list[str]] containing only entries whose values are truthy (e.g., non-empty lists).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        json.JSONDecodeError: If the input is not valid JSON.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">value</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="utility-modules">Utility Modules<a class="headerlink" href="#utility-modules" title="Permanent link">&para;</a></h2>
+<h3 id="this-section-includes-common-utility-functions">This section includes <strong>common</strong> utility functions.<a class="headerlink" href="#this-section-includes-common-utility-functions" title="Permanent link">&para;</a></h3>
+<h4 id="save_as_json">save_as_json<a class="headerlink" href="#save_as_json" title="Permanent link">&para;</a></h4>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="utils.commons.save_as_json"></a>
+    <div class="doc doc-contents first">
+
+        <p>Write a JSON-formatted string to a file and log the operation.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>JSON string content to write.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>filename</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Destination file path. Existing content will be overwritten.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file cannot be opened or written.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="logs" open>
+  <summary>Logs</summary>
+  <p>INFO: On successful save with the target file path.</p>
+</details>
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>save_as_json(res, "data/confidential/rocketbase_aws_agreement_sensitive_structures.json")</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/utils/commons.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a JSON-formatted string to a file and log the operation.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        data: JSON string content to write.</span>
+<span class="sd">        filename: Destination file path. Existing content will be overwritten.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        OSError: If the file cannot be opened or written.</span>
+
+<span class="sd">    Logs:</span>
+<span class="sd">        INFO: On successful save with the target file path.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        save_as_json(res, &quot;data/confidential/rocketbase_aws_agreement_sensitive_structures.json&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved structured output to </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h3 id="get_pdf_page_count">get_pdf_page_count<a class="headerlink" href="#get_pdf_page_count" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="utils.commons.get_pdf_page_count"></a>
+    <div class="doc doc-contents first">
+
+        <p>Return the number of pages in a PDF file.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the local PDF file.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>int</code></td>            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Total number of pages in the PDF.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="utils.commons.PDFProcessingError" href="#utils.commons.PDFProcessingError">PDFProcessingError</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file cannot be opened, is not a valid PDF, or the page count cannot be determined.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <p>page_count = get_pdf_page_count("path/to/file.pdf")
+print(f"The document has {page_count} pages.")</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/utils/commons.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_pdf_page_count</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the number of pages in a PDF file.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        file_path (str): Path to the local PDF file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int: Total number of pages in the PDF.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        PDFProcessingError: If the file cannot be opened, is not a valid PDF, or the page count cannot be determined.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        page_count = get_pdf_page_count(&quot;path/to/file.pdf&quot;)</span>
+<span class="sd">        print(f&quot;The document has {page_count} pages.&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">pdf_reader</span> <span class="o">=</span> <span class="n">pypdf</span><span class="o">.</span><span class="n">PdfReader</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">pdf_reader</span><span class="o">.</span><span class="n">pages</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PDFProcessingError</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h3 id="get_file_size">get_file_size<a class="headerlink" href="#get_file_size" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="utils.commons.get_file_size"></a>
+    <div class="doc doc-contents first">
+
+        <p>Return the size of a file in bytes.</p>
+<pre><code>Parameters:
+    file_path (str): Path to the file.
+
+Returns:
+    int: File size in bytes.
+
+Raises:
+    FileNotFoundError: If the file does not exist.
+    OSError: If the size cannot be retrieved due to an OS-related error.
+
+Example:
+    size = get_file_size("/path/to/file.txt")
+    print(f"File size: {size} bytes")
+</code></pre>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/doc_redaction/utils/commons.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_file_size</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the size of a file in bytes.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            file_path (str): Path to the file.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: File size in bytes.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            FileNotFoundError: If the file does not exist.</span>
+<span class="sd">            OSError: If the size cannot be retrieved due to an OS-related error.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            size = get_file_size(&quot;/path/to/file.txt&quot;)</span>
+<span class="sd">            print(f&quot;File size: {size} bytes&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h3 id="invalidcontenttype">InvalidContentType<a class="headerlink" href="#invalidcontenttype" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="utils.commons.InvalidContentType"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="TypeError">TypeError</span></code></p>
+
+
+        <p>Raised when content is neither str nor int.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/doc_redaction/utils/commons.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">InvalidContentType</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when content is neither str nor int.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">actual_type</span><span class="p">:</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Content must be str or int, got </span><span class="si">{</span><span class="n">actual_type</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="invaliddocumentkeyerror">InvalidDocumentKeyError<a class="headerlink" href="#invaliddocumentkeyerror" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="utils.commons.InvalidDocumentKeyError"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="ValueError">ValueError</span></code></p>
+
+
+        <p>Raised when the provided document key is missing or invalid.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/doc_redaction/utils/commons.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">InvalidDocumentKeyError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when the provided document key is missing or invalid.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;A document key must be provided as a non-empty string.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="missingargumenterror">MissingArgumentError<a class="headerlink" href="#missingargumenterror" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="utils.commons.MissingArgumentError"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="ValueError">ValueError</span></code></p>
+
+
+        <p>Raised when a required argument is missing.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/doc_redaction/utils/commons.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MissingArgumentError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a required argument is missing.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argument_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">argument_name</span><span class="si">}</span><span class="s2"> must be provided&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="pdfprocessingerror">PDFProcessingError<a class="headerlink" href="#pdfprocessingerror" title="Permanent link">&para;</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="utils.commons.PDFProcessingError"></a>
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="Exception">Exception</span></code></p>
+
+
+        <p>Raised when PDF processing fails.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/doc_redaction/utils/commons.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PDFProcessingError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when PDF processing fails.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not determine page count for </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_path</span> <span class="o">=</span> <span class="n">file_path</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Maintained by <a href="https://deadhand777.com">deadhand777</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/deadhand777/doc-redaction" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

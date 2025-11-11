@@ -1,0 +1,923 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is a Document Redaction Automation project.">
+      
+      
+        <meta name="author" content="Chris Schulz">
+      
+      
+        <link rel="canonical" href="https://deadhand777.github.io/doc-redaction/agentic_workflow/">
+      
+      
+        <link rel="prev" href="../getting_started/">
+      
+      
+        <link rel="next" href="../architecture/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Agent Workflow - doc-redaction</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agent-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="doc-redaction" class="md-header__button md-logo" aria-label="doc-redaction" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            doc-redaction
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agent Workflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/deadhand777/doc-redaction" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deadhand777/doc-redaction
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="doc-redaction" class="md-nav__button md-logo" aria-label="doc-redaction" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    doc-redaction
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/deadhand777/doc-redaction" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deadhand777/doc-redaction
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Agent Workflow
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Workflow
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#graph-node-1-pdf-to-markdown-conversion-convert_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Node 1: PDF to Markdown Conversion (convert_result)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-node-2-sensitive-data-detection-detector_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Node 2: Sensitive Data Detection (detector_result)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-node-3-document-redaction-redact_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Node 3: Document Redaction (redact_result)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-based-agent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph-Based Agent Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph-Based Agent Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow Execution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-workflow-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Workflow Benefits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph Workflow Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability-flexibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalability &amp; Flexibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliability-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reliability &amp; Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-input-and-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Input and Output
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#graph-node-1-pdf-to-markdown-conversion-convert_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Node 1: PDF to Markdown Conversion (convert_result)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-node-2-sensitive-data-detection-detector_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Node 2: Sensitive Data Detection (detector_result)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-node-3-document-redaction-redact_result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Node 3: Document Redaction (redact_result)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-based-agent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph-Based Agent Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph-Based Agent Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow Execution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-workflow-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Workflow Benefits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph Workflow Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability-flexibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalability &amp; Flexibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliability-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reliability &amp; Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-input-and-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Input and Output
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="agent-workflow">Agent Workflow<a class="headerlink" href="#agent-workflow" title="Permanent link">&para;</a></h1>
+<p>The service is a <strong>agentic system</strong> composed of a <strong>graph-based multi-agent workflow</strong>.</p>
+<p>The document processing pipeline uses a <strong>Graph Multi-Agent Pattern</strong> to orchestrate three specialized agents that convert, analyze, and redact sensitive information from PDF contracts using AI agents powered by AWS Bedrock models. This graph-based approach enables parallel processing and efficient resource utilization through the Strands framework's <code>GraphBuilder</code>.</p>
+<p><img alt="Agentic Workflow" src="../assets/agentic_workflow.png" /></p>
+<h3 id="graph-node-1-pdf-to-markdown-conversion-convert_result">Graph Node 1: PDF to Markdown Conversion (<code>convert_result</code>)<a class="headerlink" href="#graph-node-1-pdf-to-markdown-conversion-convert_result" title="Permanent link">&para;</a></h3>
+<p><strong>Entry Point Agent</strong> - Multimodal agent with AI vision capabilities:</p>
+<ul>
+<li>Reads and understands PDF content from converted PNG images</li>
+<li>Converts PDF structure and content to clean markdown format</li>
+<li>Preserves document structure, formatting, and content hierarchy</li>
+<li><strong>Tools</strong>: <code>image_reader</code>, <code>merge_markdown_strings</code>, <code>save_file</code>, <code>remove_temp_files</code></li>
+</ul>
+<p><strong>Output</strong>: Markdown file representing the original PDF document
+<strong>Graph Position</strong>: Entry point that triggers downstream agents</p>
+<h3 id="graph-node-2-sensitive-data-detection-detector_result">Graph Node 2: Sensitive Data Detection (<code>detector_result</code>)<a class="headerlink" href="#graph-node-2-sensitive-data-detection-detector_result" title="Permanent link">&para;</a></h3>
+<p><strong>Detection Agent</strong> - Specialized for sensitive information identification:</p>
+<ul>
+<li><strong>Dependencies</strong>: Requires completion of conversion agent (<code>convert_result</code>)</li>
+<li>Analyzes document content using structured output with SensitiveData model</li>
+<li>Identifies and extracts sensitive information including:</li>
+<li>Personal information (names, emails, phone numbers)</li>
+<li>Company details (names, addresses, registration numbers)</li>
+<li>Document metadata and analysis information</li>
+<li><strong>Tools</strong>: <code>current_time</code>, <code>detect_sensitive_data</code>, <code>omit_empty_keys</code></li>
+<li><strong>Model Configuration</strong>: Uses Haiku model for efficient processing</li>
+</ul>
+<p><strong>Output</strong>: Structured JSON file with detected sensitive information
+<strong>Graph Position</strong>: Parallel processing node that can execute concurrently with redaction planning</p>
+<h3 id="graph-node-3-document-redaction-redact_result">Graph Node 3: Document Redaction (<code>redact_result</code>)<a class="headerlink" href="#graph-node-3-document-redaction-redact_result" title="Permanent link">&para;</a></h3>
+<p><strong>Redaction Agent</strong> - Focused on content sanitization:</p>
+<ul>
+<li><strong>Dependencies</strong>: Requires both conversion (<code>convert_result</code>) and detection (<code>detector_result</code>) completion</li>
+<li>Systematically redacts all sensitive information identified by the detection agent</li>
+<li>Preserves document structure and non-sensitive content</li>
+<li>Maintains document readability while removing confidential data</li>
+<li><strong>Tools</strong>: <code>save_file</code>, <code>redact_sensitive_data</code></li>
+<li><strong>Model Configuration</strong>: Uses Haiku model optimized for redaction tasks</li>
+</ul>
+<p><strong>Output</strong>: Redacted markdown file with sensitive information removed
+<strong>Graph Position</strong>: Final processing node that combines results from both upstream agents</p>
+<h3 id="graph-based-agent-architecture">Graph-Based Agent Architecture<a class="headerlink" href="#graph-based-agent-architecture" title="Permanent link">&para;</a></h3>
+<p>The workflow implements a <strong>Graph Multi-Agent Pattern</strong> using the Strands framework's <code>GraphBuilder</code>:</p>
+<h4 id="graph-structure">Graph Structure<a class="headerlink" href="#graph-structure" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Nodes</strong>: Three specialized agents (Conversion, Detection, Redaction)</li>
+<li><strong>Edges</strong>: Define dependencies and data flow between agents</li>
+<li><strong>Entry Point</strong>: Conversion agent serves as the workflow entry point</li>
+<li><strong>Parallel Execution</strong>: Detection and redaction agents can process concurrently after conversion</li>
+</ul>
+<h4 id="agent-configuration">Agent Configuration<a class="headerlink" href="#agent-configuration" title="Permanent link">&para;</a></h4>
+<p>Each agent is purpose-built with specific:
+- System prompts tailored to their specialized task
+- Curated tool sets for required operations
+- Model configurations optimized for their workload (e.g., Haiku model for detection and redaction)</p>
+<h4 id="workflow-execution">Workflow Execution<a class="headerlink" href="#workflow-execution" title="Permanent link">&para;</a></h4>
+<pre><code class="language-python">builder = GraphBuilder()
+builder.add_node(multimodal_agent, &quot;convert_result&quot;)
+builder.add_node(detector_agent, &quot;detector_result&quot;)
+builder.add_node(redact_agent, &quot;redact_result&quot;)
+
+# Define dependencies
+builder.add_edge(&quot;convert_result&quot;, &quot;detector_result&quot;)
+builder.add_edge(&quot;convert_result&quot;, &quot;redact_result&quot;)
+builder.add_edge(&quot;detector_result&quot;, &quot;redact_result&quot;)
+
+builder.set_entry_point(&quot;convert_result&quot;)
+builder.set_execution_timeout(300)
+graph = builder.build()
+</code></pre>
+<p>This architecture provides:
+- <strong>Parallel Processing</strong>: Detection and redaction can process simultaneously where dependencies allow
+- <strong>Optimized Resource Usage</strong>: Multiple agents can work concurrently
+- <strong>Flexible Execution</strong>: Graph structure enables dynamic workflow adaptation
+- <strong>Robust Error Handling</strong>: Built-in timeout and status management</p>
+<h3 id="graph-workflow-benefits">Graph Workflow Benefits<a class="headerlink" href="#graph-workflow-benefits" title="Permanent link">&para;</a></h3>
+<p>The Graph Multi-Agent Pattern provides several key advantages over traditional linear workflows:</p>
+<h4 id="performance-enhancements">Performance Enhancements<a class="headerlink" href="#performance-enhancements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Parallel Execution</strong>: Detection and initial redaction planning can start simultaneously after conversion</li>
+<li><strong>Resource Optimization</strong>: Multiple agents utilize available compute resources concurrently</li>
+<li><strong>Reduced Latency</strong>: Overall processing time decreased through concurrent operations</li>
+</ul>
+<h4 id="scalability-flexibility">Scalability &amp; Flexibility<a class="headerlink" href="#scalability-flexibility" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Dynamic Adaptation</strong>: Graph structure allows for easy addition of new processing nodes</li>
+<li><strong>Conditional Routing</strong>: Future enhancements can implement branching logic based on document characteristics</li>
+<li><strong>Modular Design</strong>: Individual agents can be updated or replaced without affecting the entire workflow</li>
+</ul>
+<h4 id="reliability-monitoring">Reliability &amp; Monitoring<a class="headerlink" href="#reliability-monitoring" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Execution Status</strong>: Built-in workflow status tracking and timeout management</li>
+<li><strong>Granular Metrics</strong>: Individual agent performance metrics for detailed analysis</li>
+<li><strong>Error Isolation</strong>: Failures in one agent don't immediately cascade to others</li>
+</ul>
+<h3 id="output-artifacts">Output Artifacts<a class="headerlink" href="#output-artifacts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Converted Document</strong>: Clean markdown representation of the original PDF</li>
+<li><strong>Sensitive Data Catalog</strong>: Structured JSON with all detected sensitive information</li>
+<li><strong>Redacted Document</strong>: Sanitized version safe for broader distribution</li>
+<li><strong>Process Metrics</strong>: Detailed logging, token usage, and execution statistics for each agent</li>
+<li><strong>Workflow Status</strong>: Graph execution status and accumulated usage metrics</li>
+</ul>
+<p>This graph-based workflow enables automated, AI-powered document redaction with enhanced performance, parallel processing capabilities, and full traceability. The structured output and execution metrics make it suitable for compliance and audit requirements while providing superior efficiency through multi-agent coordination.</p>
+<h2 id="example-input-and-output">Example Input and Output<a class="headerlink" href="#example-input-and-output" title="Permanent link">&para;</a></h2>
+<p>Sample input and output artifacts can be found in the <a href="https://github.com/deadhand777/doc-redaction/data/">data directory</a> of this repository.</p>
+<table>
+<thead>
+<tr>
+<th>Raw Contract</th>
+<th>Converted Document</th>
+<th>Sensitive Data Catalog</th>
+<th>Redacted Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/contract/spielbank_rocketbase_dienstleistungsvertrag.pdf">Raw spielbank_rocketbase_dienstleistungsvertrag</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/markdown/spielbank_rocketbase_dienstleistungsvertrag.md">Converted spielbank_rocketbase_dienstleistungsvertrag</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/confidential/spielbank_rocketbase_dienstleistungsvertrag.json">Extracted spielbank_rocketbase_dienstleistungsvertrag</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/redact/spielbank_rocketbase_dienstleistungsvertrag_redacted.md">Redacted spielbank_rocketbase_dienstleistungsvertrag</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/contract/rocketbase_aws_agreement.pdf">Raw rocketbase_aws_agreement</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/markdown/rocketbase_aws_agreement.md">Converted rocketbase_aws_agreement</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/confidential/rocketbase_aws_agreement.json">Extracted rocketbase_aws_agreement</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/redact/rocketbase_aws_agreement_redacted.md">Redacted rocketbase_aws_agreement</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/contract/spielbank_rocketbase_vertrag.pdf">Raw spielbank_rocketbase_vertrag</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/markdown/spielbank_rocketbase_vertrag.md">Converted spielbank_rocketbase_vertrag</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/confidential/spielbank_rocketbase_vertrag.json">Extracted spielbank_rocketbase_vertrag</a></td>
+<td><a href="https://github.com/deadhand777/doc-redaction/blob/main/data/redact/spielbank_rocketbase_vertrag_redacted.md">Redacted spielbank_rocketbase_vertrag</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Maintained by <a href="https://deadhand777.com">deadhand777</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/deadhand777/doc-redaction" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
