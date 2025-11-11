@@ -116,3 +116,7 @@ Please visit the [Agentic Workflow Section](https://deadhand777.github.io/doc-re
 ## Contributing
 
 Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information on how to contribute to this project.
+
+---
+
+**Made with ❤️ by [@deadhand777](https://github.com/deadhand777)**
